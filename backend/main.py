@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from database.session import get_engine
 from router.init_db_router import init_router
+from router.insert_data_router import insert_data_router
 
 
 
@@ -30,4 +31,5 @@ app = FastAPI(
     ]
 )
 
-app.include_router(init_router, prefix="/api") # initialize db tables
+app.include_router(init_router, prefix="/api/init") # initialize db tables
+app.include_router(insert_data_router, prefix="/api/init") # insert data into db
