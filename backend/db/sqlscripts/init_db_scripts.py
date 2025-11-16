@@ -29,7 +29,7 @@ create_cars_table = text(
         year INTEGER,
         baseMSRP INTEGER,
         manufacturerID INTEGER,
-        FOREIGN KEY (manufacturerID) REFERENCES manufacturers(manufacturerID)
+        FOREIGN KEY (manufacturerID) REFERENCES manufacturers(manufacturerID) ON DELETE CASCADE
     )
     """
 )
