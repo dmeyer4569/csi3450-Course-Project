@@ -76,5 +76,11 @@ cars = [
     {"carID": 14, "model": "Model 3", "year": 2024, "baseMSRP": 39990, "manufacturerID": 5},
     {"carID": 15, "model": "Model Y", "year": 2024, "baseMSRP": 49990, "manufacturerID": 5},
 ]
-
+# images for cars, not the actual car images rn.. to be changed
+car_images = [
+    {"carID": 3, "imageID": 2, "role":"test1"},
+    {"carID": 3, "imageID": 1, "role":"test2"},
+    {"carID": 3, "imageID": 4, "role":"test3"},
+    {"carID": 3, "imageID": 3, "role":"test4"},
+]
 __all__ = ["images", "manufacturers", "cars"]

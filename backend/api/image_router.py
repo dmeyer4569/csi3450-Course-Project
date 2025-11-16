@@ -4,10 +4,14 @@ makes it nice and pretty + keeps me from going insane -ish
 """
 
 from fastapi import Depends, APIRouter, HTTPException, status
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
+from sqlalchemy.ext.asyncio import AsyncSession
 from pathlib import Path
 from database.session import get_db
 from db.sqlscripts.data import images
+from db.sqlscripts import select_db_scripts as sel_db
+import base64
+import os
 
 image_router = APIRouter()
 
@@ -32,3 +36,46 @@ async def get_image(image_id: int):
 
     return FileResponse(path=str(file_path), media_type="image/png", filename=filename)
 
+@image_router.get("/get_car_image/{car_id}", tags=["Images"])
+async def get_car_image(car_id: int, as_base64: bool = True, db: AsyncSession = Depends(get_db)):
+    # get images form db
+    result = await db.execute(sel_db.get_car_images, {"carID": car_id})
+    images = result.fetchall()
+    # return http except if no images found
+    if not result:
+        raise HTTPException(status_code=404, detail="No images found for this car")
+    print(images)
+
+    response_data = []
+
+    for img in images:
+        img_id, name, path, description, *_ = img  
+        abs_path = os.path.join(os.getcwd(), path)  # Make path absolute
+        if not os.path.exists(abs_path):
+            print(abs_path)
+            continue  # skip this image
+        if as_base64:
+            try:
+                with open(abs_path, "rb") as f:
+                    encoded_string = base64.b64encode(f.read()).decode("utf-8")
+                response_data.append({
+                    "id": img_id,
+                    "name": name,
+                    "description": description,
+                    "image_base64": encoded_string
+                })
+            except FileNotFoundError:
+                continue  
+        else:
+            response_data.append({
+                "id": img_id,
+                "name": name,
+                "description": description,
+                "image_url": f"/images/{img_id}"
+            })
+
+    if not response_data:
+        raise HTTPException(status_code=404, detail="No valid image files found")
+
+    # return images as json base64
+    return JSONResponse(content=response_data)

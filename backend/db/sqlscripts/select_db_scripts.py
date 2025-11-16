@@ -25,3 +25,31 @@ get_manufact_cars = text(
     LIMIT :limit OFFSET :offset;
     """
 )
+
+# get all manufacturers
+get_manufacturers = text(
+    """
+    SELECT * 
+    FROM manufacturers
+    LIMIT :limit OFFSET :offset;
+    """
+)
+
+# get all cars
+get_cars = text(
+    """
+    SELECT * 
+    FROM cars
+    LIMIT :limit OFFSET :offset;
+    """
+)
+
+# get images of a car, split it up cuz easier handling when multiple images are returned
+get_car_images = text(
+    """
+    SELECT i.*, ci.role, ci.addedAt
+    FROM images i
+    JOIN car_images ci ON ci.imageID = i.imageID
+    WHERE ci.carID = :carID
+    """
+)

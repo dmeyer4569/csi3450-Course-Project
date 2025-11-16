@@ -17,7 +17,7 @@ async def initialize_db(db: AsyncSession = Depends(get_db)):
     await db.execute(initDB.create_images_table)
     await db.execute(initDB.create_manufacturers_table)
     await db.execute(initDB.create_cars_table)
-
+    await db.execute(initDB.create_car_images_table)
     await db.commit()
 
     raise HTTPException(status_code=status.HTTP_201_CREATED, detail="Tables created successfully.")

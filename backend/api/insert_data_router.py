@@ -6,7 +6,7 @@ from fastapi import Depends, APIRouter, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from database.session import get_db
 from db.sqlscripts import fill_db_scripts as fillDB
-from db.sqlscripts.data import manufacturers, cars, images
+from db.sqlscripts.data import manufacturers, cars, images, car_images
 
 insert_data_router = APIRouter()
 
@@ -27,5 +27,7 @@ async def initialize_data(db: AsyncSession = Depends(get_db)):
     for c in cars:
         await db.execute(fillDB.insert_into_car, c)
 
+    for ci in car_images:
+        await db.execute(fillDB.insert_into_car_images, ci)
     await db.commit()
     raise HTTPException(status_code=status.HTTP_201_CREATED, detail="Seed data inserted successfully.")
