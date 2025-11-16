@@ -78,9 +78,25 @@ cars = [
 ]
 # images for cars, not the actual car images rn.. to be changed
 car_images = [
-    {"carID": 3, "imageID": 2, "role":"test1"},
-    {"carID": 3, "imageID": 1, "role":"test2"},
-    {"carID": 3, "imageID": 4, "role":"test3"},
-    {"carID": 3, "imageID": 3, "role":"test4"},
+    {"carID": 1, "imageID": 1, "role":"logo"},
+    {"carID": 2, "imageID": 1, "role":"logo"},
+    {"carID": 3, "imageID": 1, "role":"logo"},
+    
+    {"carID": 4, "imageID": 2, "role":"logo"},
+    {"carID": 5, "imageID": 2, "role":"logo"},
+    {"carID": 6, "imageID": 2, "role":"logo"},
+
+    {"carID": 7, "imageID": 3, "role":"logo"},
+    {"carID": 8, "imageID": 3, "role":"logo"},
+    {"carID": 9, "imageID": 3, "role":"logo"},
+
+    {"carID": 10, "imageID": 4, "role":"logo"},
+    {"carID": 11, "imageID": 4, "role":"logo"},
+    {"carID": 12, "imageID": 4, "role":"logo"},
+
+    {"carID": 13, "imageID": 5, "role":"logo"},
+    {"carID": 14, "imageID": 5, "role":"logo"},
+    {"carID": 15, "imageID": 5, "role":"logo"},
+
 ]
 __all__ = ["images", "manufacturers", "cars"]
