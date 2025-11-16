@@ -24,3 +24,10 @@ insert_into_images = text(
     VALUES (:imageID, :FileName, :FilePath, :Description)
     """
 )
+
+insert_into_car_images = text(
+    """
+    INSERT INTO car_images (carID, imageID, role)
+    VALUES (:carID, :imageID, :role);
+    """
+)

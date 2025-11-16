@@ -45,3 +45,20 @@ create_images_table = text(
     )
     """
 )
+
+
+# mtm between cars and images
+create_car_images_table = text(
+    """
+    CREATE TABLE IF NOT EXISTS car_images (
+        carImageID INTEGER PRIMARY KEY AUTOINCREMENT,
+        carID INTEGER NOT NULL,
+        imageID INTEGER NOT NULL,
+        role VARCHAR(50),
+        addedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (carID) REFERENCES cars(carID) ON DELETE CASCADE,
+        FOREIGN KEY (imageID) REFERENCES images(imageID) ON DELETE CASCADE,
+        UNIQUE(carID, imageID)
+    )
+    """
+)
