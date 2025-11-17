@@ -1,11 +1,11 @@
 """
 Probably will have the following : 
-    1. List all cars created by a manufacturer
-    2. List all manufacturers
-    3. List all cars
-    4. List a specific car with all its images
-    5. Find the most expensive car
-    6. Find the oldest car manufacturer
+    1. List all cars created by a manufacturer -> DONE
+    2. List all manufacturers -> DONE
+    3. List all cars -> DONE 
+    4. List a specific car with all its images -> DONE
+    5. Find the most expensive car -> Next
+    6. Find the oldest car manufacturer -> Next, maybe combine with no 5
     7. tbd as i go 
 """
 
@@ -43,7 +43,8 @@ get_cars = text(
         i.imageID,
         i.FileName,
         i.FilePath,
-        ci.role
+        ci.role,
+        m.manufacturerName
     FROM cars c
     LEFT JOIN car_images ci ON ci.carImageID = (
         SELECT ci2.carImageID
@@ -52,6 +53,7 @@ get_cars = text(
         ORDER BY ci2.addedAt ASC, ci2.carImageID ASC
         LIMIT 1
     )
+    LEFT JOIN manufacturers m on m.manufacturerID = c.manufacturerID
     LEFT JOIN images i ON i.imageID = ci.imageID
     LIMIT :limit OFFSET :offset;
     """
@@ -64,5 +66,26 @@ get_car_images = text(
     FROM images i
     JOIN car_images ci ON ci.imageID = i.imageID
     WHERE ci.carID = :carID
+    """
+)
+
+# Get all cars of a manufacturer
+get_cars_by_manufacturer = text(
+    """
+    SELECT c.*, ci.*, i.FilePath, i.FileName
+    FROM cars c
+    LEFT JOIN car_images ci 
+    ON ci.carID = c.carID
+    AND ci.carImageID = (
+        SELECT ci2.carImageID
+        FROM car_images ci2
+        WHERE ci2.carID = c.carID
+        ORDER BY ci2.addedAt ASC, ci2.carImageID ASC
+        LIMIT 1
+    )
+    LEFT JOIN images i on i.imageID = ci.imageID
+    WHERE c.manufacturerID = :manufacturerID
+    ORDER BY c.year DESC, c.model
+    LIMIT :limit OFFSET :offset;
     """
 )
