@@ -6,22 +6,22 @@ from sqlalchemy import text
 
 insert_into_manufacturer = text(
     """
-    INSERT INTO manufacturers (manufacturerID, manufacturerName, established, headquarters, description, logoID)
-    VALUES (:manufacturerID, :manufacturerName, :established, :headquarters, :description, :logoID)
+    INSERT INTO manufacturers (manufacturerName, established, headquarters, description, logoID)
+    VALUES (:manufacturerName, :established, :headquarters, :description, :logoID)
     """
 )
 
 insert_into_car = text(
     """
-    INSERT INTO cars (carID, model, year, baseMSRP, manufacturerID)
-    VALUES (:carID, :model, :year, :baseMSRP, :manufacturerID)
+    INSERT INTO cars (model, year, baseMSRP, manufacturerID)
+    VALUES (:model, :year, :baseMSRP, :manufacturerID)
     """
 )
 
 insert_into_images = text(
     """
-    INSERT INTO images (imageID, FileName, FilePath, Description)
-    VALUES (:imageID, :FileName, :FilePath, :Description)
+    INSERT INTO images (FileName, FilePath, Description)
+    VALUES (:FileName, :FilePath, :Description)
     """
 )
 
