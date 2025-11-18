@@ -4,6 +4,7 @@ from api.init_db_router import init_router
 from api.insert_data_router import insert_data_router
 from api.image_router import image_router
 from api.select_router import select_router
+from api.select_sort_router import select_sort_router
 
 
 async def lifespan(app: FastAPI):
@@ -28,3 +29,4 @@ app.include_router(init_router, prefix="/api/init")  # initialize db tables
 app.include_router(insert_data_router, prefix="/api/init")  # insert data into db
 app.include_router(image_router, prefix="/api") # image api, handles anything image related... almost made my go insnae
 app.include_router(select_router, prefix="/api")
+app.include_router(select_sort_router, prefix="/api")
