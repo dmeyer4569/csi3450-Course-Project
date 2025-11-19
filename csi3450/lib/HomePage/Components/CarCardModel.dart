@@ -1,9 +1,6 @@
-import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutterflow_ui/flutterflow_ui.dart';
 import 'dart:ui';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart'
-as smooth_page_indicator;
+import 'package:smooth_page_indicator/smooth_page_indicator.dart' as smooth_page_indicator;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -19,26 +16,8 @@ class CarCardWidget extends StatefulWidget {
 }
 
 class _CarCardWidgetState extends State<CarCardWidget> {
-  late CarCardModel _model;
-
-  @override
-  void setState(VoidCallback callback) {
-    super.setState(callback);
-    _model.onUpdate();
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _model = createModel(context, () => CarCardModel());
-  }
-
-  @override
-  void dispose() {
-    _model.maybeDispose();
-
-    super.dispose();
-  }
+  late PageController _pageController;
+  
 
   @override
   Widget build(BuildContext context) {
