@@ -28,7 +28,7 @@ async def edit_manufacturer(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="manufacturerID is required to edit a manufacturer."
         )
-    
+    # make sure at least oen field is filled to edit 
     if all(param is None for param in [manufacturerName, established, headquarters, description]):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -47,4 +47,36 @@ async def edit_manufacturer(
 
     return {"message": "Manufacturer edited successfully."}
 
+    #same as eidt manufacturer but for cars
+@edit_router.put("/edit_car", tags=["Edit"])
+async def edit_car(
+    carID: int,
+    model: str = None,
+    year: int = None,
+    baseMSRP: float = None,
+    manufacturerID: int = None,
+    db: AsyncSession = Depends(get_db)
+):
+    if carID is None:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="carID is required to edit a car."
+        )
+    # make sure at least one field is filled to edit
+    if all(param is None for param in [model, year, baseMSRP, manufacturerID]):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="At least one field to edit must be provided."
+        )
     
+    query = editDB.edit_car_script(model, year, baseMSRP, manufacturerID)
+    await db.execute(query, {
+        "carID": carID,
+        "model": model,
+        "year": year,
+        "baseMSRP": baseMSRP,
+        "manufacturerID": manufacturerID,
+    })
+    await db.commit()
+
+    return {"message": "Car edited successfully."}  
