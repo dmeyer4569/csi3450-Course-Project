@@ -5,6 +5,7 @@ import os
 import uuid
 from fastapi import Depends, APIRouter, Form, HTTPException, UploadFile, status, File
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import text
 from database.session import get_db
 from db.sqlscripts import fill_db_scripts as fillDB
 from typing import List
