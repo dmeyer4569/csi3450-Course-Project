@@ -7,6 +7,7 @@ from fastapi import Depends, APIRouter, Form, HTTPException, UploadFile, status,
 from sqlalchemy.ext.asyncio import AsyncSession
 from database.session import get_db
 from db.sqlscripts import fill_db_scripts as fillDB
+from typing import List
 
 insert_router = APIRouter()
 
