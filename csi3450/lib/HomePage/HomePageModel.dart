@@ -1,9 +1,7 @@
 import './Components/CarCardModel.dart';
-import 'package:flutterflow_ui/flutterflow_ui.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 import 'HomePageModel.dart';
 export 'HomePageModel.dart';
@@ -19,19 +17,16 @@ class HomePageWidget extends StatefulWidget {
 }
 
 class _HomePageWidgetState extends State<HomePageWidget> {
-  late HomePageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => HomePageModel());
   }
 
   @override
   void dispose() {
-    _model.dispose();
 
     super.dispose();
   }
@@ -45,26 +40,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: Colors.purple,
           automaticallyImplyLeading: false,
           title: Text(
             'Page Title',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-              font: GoogleFonts.interTight(
-                fontWeight:
-                FlutterFlowTheme.of(context).headlineMedium.fontWeight,
-                fontStyle:
-                FlutterFlowTheme.of(context).headlineMedium.fontStyle,
-              ),
-              color: Colors.white,
-              fontSize: 22,
-              letterSpacing: 0.0,
-              fontWeight:
-              FlutterFlowTheme.of(context).headlineMedium.fontWeight,
-              fontStyle:
-              FlutterFlowTheme.of(context).headlineMedium.fontStyle,
+            style: GoogleFonts.interTight(
+                fontWeight: FontWeight.w500,
+                color: Colors.white,
+                fontSize: 22,
             ),
           ),
           actions: [],
@@ -79,27 +64,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Expanded(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding:
-                          EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-                          child: wrapWithModel(
-                            model: _model.carCardModel1,
-                            updateCallback: () => safeSetState(() {}),
-                            child: CarCardWidget(),
-                          ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding:
+                        EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                        child: CarCardWidget(),
                         ),
-                        wrapWithModel(
-                          model: _model.carCardModel2,
-                          updateCallback: () => safeSetState(() {}),
-                          child: CarCardWidget(),
-                        ),
-                      ],
-                    ),
+                      CarCardWidget(),
+                    ],
                   ),
                 ],
               ),
