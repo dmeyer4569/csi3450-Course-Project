@@ -7,6 +7,7 @@ from api.select_router import select_router
 from api.select_sort_router import select_sort_router
 from api.insert_router import insert_router
 from api.edit_router import edit_router
+from api.delete_router import delete_router
 
 async def lifespan(app: FastAPI):
     engine = get_engine(testing=True)  # Use testing sqlite DB by default
@@ -33,3 +34,4 @@ app.include_router(select_router, prefix="/api")
 app.include_router(select_sort_router, prefix="/api")
 app.include_router(insert_router, prefix="/api") # insert data from frontend to db 
 app.include_router(edit_router, prefix="/api") # edit data in db from frontend
+app.include_router(delete_router, prefix="/api") # delete endpoints
