@@ -26,3 +26,45 @@ Now you can access all currently existent endpoints by going to
 Next start the frontend
 
 To be complete
+
+
+# What endpoints exist
+
+#### GET (Select)
+
+ * Get Manufacturers
+   * Returns the manufacturer details + logo
+ * Get Cars
+   * Returns a set amount of cars + first image
+ * Get cars of a manufacturer
+   * Returns all cars a manufacturer has
+   * Returns the manufacturer logo
+   * Returns the first car image of each car
+   * Can be sorted by car year ascending/descending
+   * Can be sorted by car MSRP ascending/descending
+ * Get Images for a Car
+   * Returns all car data + all images with a car
+
+#### POST (Insert)
+
+ * Spawn all the tables into a fresh new sqlite instance (highly doubt I'll change this to a different DB)
+ * Insert all data into said tables (make sure to spawn tables before inserting data)
+ * Insert a new manufacturer
+   * When inserting a new manufacturer you can also upload the logo
+ * Insert a new car
+   * When inserting a car you can upload multiple images for the car image gallery
+
+#### PUT (Edit)
+
+ * Edit an existent manufacturer
+ * Edit an existent car
+ * Edit images associated with each (To be complete)
+
+#### DELETE (Delete)
+
+ * Delete a manufacturer
+   * Cascades all images, cars, and car images related to manufacturer
+ * Delete a car
+   * Deletes all images associated with the car
+ * Delete a image
+   * Deletes a singular image (why? idk)
