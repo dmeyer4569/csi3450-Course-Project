@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 from database.session import get_engine
 from api.init_db_router import init_router
 from api.insert_data_router import insert_data_router
@@ -26,6 +27,7 @@ app = FastAPI(
 )
 
 
+app.mount("/images", StaticFiles(directory="images"), name="images") # for images :D
 
 app.include_router(init_router, prefix="/api/init")  # initialize db tables
 app.include_router(insert_data_router, prefix="/api/init")  # insert data into db

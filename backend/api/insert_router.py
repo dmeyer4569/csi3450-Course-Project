@@ -104,67 +104,69 @@ async def insert_car(
     year: int,
     baseMSRP: float,
     manufacturerID: int,
-    images: List[UploadFile] = File(None),  # optional
+    images: List[UploadFile] = File(None),
     db: AsyncSession = Depends(get_db)
 ):
     if not all([model, year, baseMSRP, manufacturerID]):
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,detail="All car fields are required")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="All car fields are required"
+        )
+
+    # insert car, (only once)
+    result = await db.execute(
+        fillDB.insert_into_car,
+        {
+            "model": model,
+            "year": year,
+            "baseMSRP": baseMSRP,
+            "manufacturerID": manufacturerID
+        }
+    )
+    await db.commit()
+
+    # 2. get the id of inserted car 
+    car_result = await db.execute(text("SELECT last_insert_rowid() as carID"))
+    car_id = car_result.scalar_one()
+
+    # stop if no images uploaded
     if not images:
-        await db.execute(
-            fillDB.insert_into_car,
+        return {"message": "Car inserted (no images)."}
+
+    # if images, put images to the images/uploads folder
+    upload_dir = "images/uploads"
+    os.makedirs(upload_dir, exist_ok=True)
+
+    for image in images:
+        ext = os.path.splitext(image.filename)[1]
+        safe_file_name = f"{uuid.uuid4().hex}{ext}"
+        file_path = os.path.join(upload_dir, safe_file_name)
+
+        contents = await image.read()
+        with open(file_path, "wb") as f:
+            f.write(contents)
+
+        # insert
+        image_result = await db.execute(
+            fillDB.insert_into_images,
             {
-                "model": model,
-                "year": year,
-                "baseMSRP": baseMSRP,
-                "manufacturerID": manufacturerID
+                "FileName": image.filename,
+                "FilePath": file_path,
+                "Description": f"Image for {model}"
             }
         )
         await db.commit()
-    
-    else: 
-        upload_dir = "images/uploads"
-        os.makedirs(upload_dir, exist_ok=True)
+        image_id = image_result.lastrowid
 
-        for image in images:
-            ext = os.path.splitext(image.filename)[1]
-            safe_file_name = f"{uuid.uuid4().hex}{ext}"
-            file_path = os.path.join(upload_dir, safe_file_name)
+        # link img to car
+        await db.execute(
+            fillDB.insert_into_car_images,
+            {
+                "carID": car_id,
+                "imageID": image_id,
+                "role": "gallery"
+            }
+        )
+        await db.commit()
 
-            contents = await image.read()
-            with open(file_path, "wb") as f:
-                f.write(contents)
-            result = await db.execute(
-                fillDB.insert_into_images,
-                {
-                    "FileName": image.filename,
-                    "FilePath": file_path,
-                    "Description": f"Image for {model}"
-                }
-            )
-            await db.commit()
-            image_id = result.lastrowid
-            await db.execute(
-                fillDB.insert_into_car,
-                {
-                    "model": model,
-                    "year": year,
-                    "baseMSRP": baseMSRP,
-                    "manufacturerID": manufacturerID
-                }
-            )
-            await db.commit()
-            car_result = await db.execute(
-                text("SELECT last_insert_rowid() as carID")
-            )
-            car_id = car_result.scalar_one()
-            await db.execute(
-                fillDB.insert_into_car_images,
-                {
-                    "carID": car_id,
-                    "imageID": image_id,
-                    "role": "gallery" # tbh, idk why tf I have role... but at this point just gonan keep it 
-                }
-            )
-            await db.commit()
-
-    return {"message": "Car inserted successfully."}
+    return {"message": "Car + images inserted successfully."}
