@@ -1,6 +1,11 @@
 .venv/
 testing.sqlite
 *.pyc
+backend/images/uploads/*
+
+
+
+
 
 .idea
 
