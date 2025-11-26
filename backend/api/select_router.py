@@ -3,8 +3,7 @@ from fastapi import Depends, APIRouter, HTTPException
 from fastapi.responses import JSONResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from database.session import get_db
-from db.sqlscripts import select_db_scripts as sel_db 
-import base64
+from db.sqlscripts import select_db_scripts as sel_db
 
 select_router = APIRouter()
 
@@ -29,22 +28,19 @@ async def get_cars(limit: int = 10, offset: int = 0, db: AsyncSession = Depends(
 
     for car in cars:
         car_data = dict(car) # make the mapping a dict 
-        image_base64 = None
+        image_path = None
 
-        # verify image actually exists
-        image_path = car_data.get("FilePath")
-        print(image_path)
-        if image_path:
-            abs_path = os.path.join(os.getcwd(), image_path)
+        # verify image actually exists and extract relative path
+        file_path = car_data.get("FilePath")
+        print(file_path)
+        if file_path:
+            abs_path = os.path.join(os.getcwd(), file_path)
             print(abs_path)
             if os.path.exists(abs_path):
-                try:
-                    with open(abs_path, "rb") as f:
-                        image_base64 = base64.b64encode(f.read()).decode("utf-8")
-                except Exception as e:
-                    print(f"Error with image :( {abs_path}: {e}")
+                # Extract relative path from 'images' onwards
+                image_path = file_path[file_path.find('images'):] if 'images' in file_path else file_path
 
-        car_data["car_image_base64"] = image_base64
+        car_data["car_image_path"] = image_path
         car_data.pop("FilePath", None)
         car_data.pop("imageID", None)
         car_data.pop("manufacturerID", None)
@@ -72,22 +68,19 @@ async def get_manufacturer_cars(manufacturer_id: int, limit: int = 10, offset: i
 
     for car in cars:
         car_data = dict(car) # make the mapping a dict 
-        image_base64 = None
+        image_path = None
 
-        # verify image actually exists
-        image_path = car_data.get("FilePath")
-        print(image_path)
-        if image_path:
-            abs_path = os.path.join(os.getcwd(), image_path)
+        # verify image actually exists and extract relative path
+        file_path = car_data.get("FilePath")
+        print(file_path)
+        if file_path:
+            abs_path = os.path.join(os.getcwd(), file_path)
             print(abs_path)
             if os.path.exists(abs_path):
-                try:
-                    with open(abs_path, "rb") as f:
-                        image_base64 = base64.b64encode(f.read()).decode("utf-8")
-                except Exception as e:
-                    print(f"Error with image :( {abs_path}: {e}")
+                # Extract relative path from 'images' onwards
+                image_path = file_path[file_path.find('images'):] if 'images' in file_path else file_path
 
-        car_data["car_image_base64"] = image_base64
+        car_data["car_image_path"] = image_path
         car_data.pop("imageID", None)
         car_data.pop("manufacturerID", None)
         car_data.pop("FileName", None)
