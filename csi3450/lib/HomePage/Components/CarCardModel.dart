@@ -1,13 +1,31 @@
 import 'dart:ui';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart' as smooth_page_indicator;
+import 'package:csi3450/HomePage/Components/getCarBloC/get_car_card_bloc.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart'
+    as smooth_page_indicator;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'CarCardModel.dart';
 export 'CarCardModel.dart';
 
 class CarCardWidget extends StatefulWidget {
-  const CarCardWidget({super.key});
+  final int carId;
+  final String model;
+  final int year;
+  final int baseMsrp;
+  final String manufacturerName;
+  final String carImageBase64;
+
+  const CarCardWidget({
+    super.key,
+    required this.carId,
+    required this.model,
+    required this.year,
+    required this.baseMsrp,
+    required this.manufacturerName,
+    required this.carImageBase64,
+  });
 
   @override
   State<CarCardWidget> createState() => _CarCardWidgetState();
@@ -16,7 +34,7 @@ class CarCardWidget extends StatefulWidget {
 class _CarCardWidgetState extends State<CarCardWidget> {
   late PageController _pageController;
 
-  void initState(){
+  void initState() {
     super.initState();
     _pageController = PageController();
   }
@@ -86,8 +104,9 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                                         child: Image.network(
                                           'https://picsum.photos/seed/4/600',
                                           width: 200,
-                                          height: MediaQuery.sizeOf(context)
-                                              .height,
+                                          height: MediaQuery.sizeOf(
+                                            context,
+                                          ).height,
                                           fit: BoxFit.fill,
                                           alignment: Alignment(0, -1),
                                         ),
@@ -126,9 +145,13 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                                     alignment: AlignmentDirectional(0, 1),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 0, 20),
-                                      child: smooth_page_indicator
-                                          .SmoothPageIndicator(
+                                        0,
+                                        0,
+                                        0,
+                                        20,
+                                      ),
+                                      child:
+                                      smooth_page_indicator.SmoothPageIndicator(
                                         controller: _pageController,
                                         count: 3,
                                         axisDirection: Axis.horizontal,
@@ -136,8 +159,9 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                                           await _pageController
                                               .animateToPage(
                                             i,
-                                            duration:
-                                            Duration(milliseconds: 500),
+                                            duration: Duration(
+                                              milliseconds: 500,
+                                            ),
                                             curve: Curves.ease,
                                           );
                                         },
@@ -149,7 +173,8 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                                           dotHeight: 8,
                                           dotColor: Color(0x4CFBE5E5),
                                           activeDotColor: Colors.white,
-                                          paintStyle: PaintingStyle.fill,
+                                          paintStyle:
+                                          PaintingStyle.fill,
                                         ),
                                       ),
                                     ),
@@ -164,10 +189,7 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                                 height: double.infinity,
                                 decoration: BoxDecoration(
                                   gradient: LinearGradient(
-                                    colors: [
-                                      Colors.black,
-                                      Colors.transparent
-                                    ],
+                                    colors: [Colors.black, Colors.transparent],
                                     stops: [0, 1],
                                     begin: AlignmentDirectional(0, -1),
                                     end: AlignmentDirectional(0, 1),
@@ -186,14 +208,18 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                                     alignment: AlignmentDirectional(-1, -1),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          10, 10, 10, 10),
+                                        10,
+                                        10,
+                                        10,
+                                        10,
+                                      ),
                                       child: Text(
-                                        'F-150',
+                                        widget.model,
                                         style: GoogleFonts.inter(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                            fontSize: 19,
-                                            letterSpacing: 0.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                          fontSize: 19,
+                                          letterSpacing: 0.0,
                                         ),
                                       ),
                                     ),
@@ -203,14 +229,18 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                                   alignment: AlignmentDirectional(1, -1),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        10, 10, 10, 10),
+                                      10,
+                                      10,
+                                      10,
+                                      10,
+                                    ),
                                     child: Text(
-                                      '2025',
+                                      widget.year.toString(),
                                       style: GoogleFonts.inter(
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white,
-                                          fontSize: 19,
-                                          letterSpacing: 0.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                        fontSize: 19,
+                                        letterSpacing: 0.0,
                                       ),
                                     ),
                                   ),
@@ -239,7 +269,11 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                             Flexible(
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    5, 5, 5, 5),
+                                  5,
+                                  5,
+                                  5,
+                                  5,
+                                ),
                                 child: Container(
                                   clipBehavior: Clip.antiAlias,
                                   decoration: BoxDecoration(
@@ -260,13 +294,17 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                                   alignment: AlignmentDirectional(-1, 0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 3, 0, 0),
+                                      0,
+                                      3,
+                                      0,
+                                      0,
+                                    ),
                                     child: Text(
-                                      'Ford',
+                                      widget.manufacturerName,
                                       style: GoogleFonts.inter(
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 13,
-                                          letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 13,
+                                        letterSpacing: 0.0,
                                       ),
                                     ),
                                   ),
@@ -276,18 +314,18 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                                   child: Text(
                                     'Estimated retail value:',
                                     style: GoogleFonts.inter(
-                                        fontWeight: FontWeight.normal,
-                                        color: Color(0xFF9CADB0),
-                                        fontSize: 8,
-                                        letterSpacing: 0.0,
+                                      fontWeight: FontWeight.normal,
+                                      color: Color(0xFF9CADB0),
+                                      fontSize: 8,
+                                      letterSpacing: 0.0,
                                     ),
                                   ),
                                 ),
                                 Text(
-                                  '\$30000',
+                                  widget.baseMsrp.toString(),
                                   style: GoogleFonts.inter(
-                                      fontWeight: FontWeight.bold,
-                                      letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 0.0,
                                   ),
                                 ),
                               ],
