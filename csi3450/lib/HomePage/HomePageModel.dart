@@ -75,10 +75,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             List<CarCardWidget> uiCarCard = state.carCardModel;
                             return GridView.builder(
                               itemCount: uiCarCard.length,
+                              padding: const EdgeInsets.all(20),
 
-                              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 8,
-                                childAspectRatio: 0.88
+                              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                                maxCrossAxisExtent: 220,
+                                mainAxisExtent: 280,
+                                crossAxisSpacing: 20,
+                                mainAxisSpacing: 20,
                               ),
 
                               itemBuilder: (BuildContext context, int index) {
