@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'dart:typed_data';
 import 'dart:ui';
 import 'package:csi3450/HomePage/Components/getCarBloC/get_car_card_bloc.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
@@ -32,12 +34,13 @@ class CarCardWidget extends StatefulWidget {
 }
 
 class _CarCardWidgetState extends State<CarCardWidget> {
-  late PageController _pageController;
+  late Uint8List _imageBytes;
 
   void initState() {
     super.initState();
-    _pageController = PageController();
+    _imageBytes = base64Decode(widget.carImageBase64);
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -90,93 +93,21 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                               height: 500,
                               child: Stack(
                                 children: [
-                                  PageView(
-                                    controller: _pageController,
-                                    scrollDirection: Axis.horizontal,
-                                    children: [
-                                      ClipRRect(
-                                        borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(0),
-                                          bottomRight: Radius.circular(0),
-                                          topLeft: Radius.circular(0),
-                                          topRight: Radius.circular(0),
-                                        ),
-                                        child: Image.network(
-                                          'https://picsum.photos/seed/4/600',
-                                          width: 200,
-                                          height: MediaQuery.sizeOf(
-                                            context,
-                                          ).height,
-                                          fit: BoxFit.fill,
-                                          alignment: Alignment(0, -1),
-                                        ),
-                                      ),
-                                      ClipRRect(
-                                        borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(0),
-                                          bottomRight: Radius.circular(0),
-                                          topLeft: Radius.circular(0),
-                                          topRight: Radius.circular(0),
-                                        ),
-                                        child: Image.network(
-                                          'https://picsum.photos/seed/168/600',
-                                          width: 200,
-                                          height: 200,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                      ClipRRect(
-                                        borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(0),
-                                          bottomRight: Radius.circular(0),
-                                          topLeft: Radius.circular(0),
-                                          topRight: Radius.circular(0),
-                                        ),
-                                        child: Image.network(
-                                          'https://picsum.photos/seed/364/600',
-                                          width: 200,
-                                          height: 200,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Align(
-                                    alignment: AlignmentDirectional(0, 1),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                        0,
-                                        0,
-                                        0,
-                                        20,
-                                      ),
-                                      child:
-                                      smooth_page_indicator.SmoothPageIndicator(
-                                        controller: _pageController,
-                                        count: 3,
-                                        axisDirection: Axis.horizontal,
-                                        onDotClicked: (i) async {
-                                          await _pageController
-                                              .animateToPage(
-                                            i,
-                                            duration: Duration(
-                                              milliseconds: 500,
-                                            ),
-                                            curve: Curves.ease,
-                                          );
-                                        },
-                                        effect:
-                                        smooth_page_indicator.SlideEffect(
-                                          spacing: 8,
-                                          radius: 8,
-                                          dotWidth: 8,
-                                          dotHeight: 8,
-                                          dotColor: Color(0x4CFBE5E5),
-                                          activeDotColor: Colors.white,
-                                          paintStyle:
-                                          PaintingStyle.fill,
-                                        ),
-                                      ),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(0),
+                                      bottomRight: Radius.circular(0),
+                                      topLeft: Radius.circular(0),
+                                      topRight: Radius.circular(0),
+                                    ),
+                                    child: Image.network(
+                                      'https://picsum.photos/seed/4/600',
+                                      width: 200,
+                                      height: MediaQuery.sizeOf(
+                                        context,
+                                      ).height,
+                                      fit: BoxFit.fill,
+                                      alignment: Alignment(0, -1),
                                     ),
                                   ),
                                 ],
@@ -275,13 +206,14 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                                   5,
                                 ),
                                 child: Container(
+                                  width: 50,
                                   clipBehavior: Clip.antiAlias,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                   ),
-                                  child: Image.network(
-                                    'https://picsum.photos/seed/953/600',
-                                    fit: BoxFit.cover,
+                                  child: Image.memory(
+                                    _imageBytes,
+                                    fit: BoxFit.contain,
                                   ),
                                 ),
                               ),
@@ -322,7 +254,7 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                                   ),
                                 ),
                                 Text(
-                                  widget.baseMsrp.toString(),
+                                  '\$${widget.baseMsrp}',
                                   style: GoogleFonts.inter(
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 0.0,
