@@ -8,7 +8,7 @@ import base64
 
 select_sort_router = APIRouter()
 
-@select_sort_router.get("/get_manufacturers/{manufacturer_id}", tags=["Select"])
+@select_sort_router.get("/get_manu_cars_sort/{manufacturer_id}", tags=["Select"])
 async def get_manufacturers(manufacturer_id: int, limit: int = 5, offset: int = 0, order: int = 0, db: AsyncSession = Depends(get_db)):
 
     # default 0 = descending c.year, 1 = ascending c.year, 2 = descending c.baseMSRP, 3 = ascending c.baseMSRP

@@ -20,7 +20,7 @@ async def get_manufacturers(limit: int = 5, offset: int = 0, db: AsyncSession = 
 
 # works similar to manufacturers, but for cars + return first image
 @select_router.get("/get_cars", tags=["Select"])
-async def get_cars(limit: int = 10, offset: int = 0, db: AsyncSession = Depends(get_db)):
+async def get_cars(limit: int = 15, offset: int = 0, db: AsyncSession = Depends(get_db)):
     # smae like manufact, limit is 10 and offset 0 by default
     raw_result = await db.execute(sel_db.get_cars, {"limit": limit, "offset": offset})
     cars = raw_result.mappings().all()

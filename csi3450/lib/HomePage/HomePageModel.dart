@@ -1,3 +1,4 @@
+import 'package:csi3450/HomePage/Components/ManufacturerFilterModel.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import './Components/CarCardModel.dart';
@@ -21,27 +22,6 @@ class HomePageWidget extends StatefulWidget {
 
 class _HomePageWidgetState extends State<HomePageWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  int? _selectedManufacturerId;
-
-  final Map<String, int> _manufacturerMap = {
-    'None': 0,
-    'Ford': 1,
-    'Toyota': 2,
-    'Honda': 3,
-    'BMW': 4,
-    'Tesla': 5,
-    'Mercedes': 6,
-    'Audi': 7,
-    'Ferrari': 8,
-    'Lamborghini': 9,
-    'Volkswagen': 10,
-    'McLaren': 11,
-    'Pagani': 12,
-    'Koenigsegg': 13,
-    'Renault': 14,
-    'Bugatti': 15
-  };
 
   @override
   void initState() {
@@ -95,58 +75,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Container(
-                              width: 210,
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
-                                vertical: 4,
-                              ),
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.grey,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: DropdownButtonHideUnderline(
-                                child: DropdownButton<int>(
-                                  value: _selectedManufacturerId,
-
-                                  isExpanded: true,
-                                  hint: const Text("Select manufacturer..."),
-
-                                  items: _manufacturerMap.entries.map((entry) {
-                                    return DropdownMenuItem<int>(
-                                      value: entry.value,
-                                      child: Text(entry.key),
-                                    );
-                                  }).toList(),
-
-                                  onChanged: (int? newValue) {
-                                    if (newValue == null) return;
-
-                                    setState(() {
-                                      _selectedManufacturerId = newValue;
-                                    });
-
-                                    String selectedName = _manufacturerMap
-                                        .entries
-                                        .firstWhere(
-                                          (entry) => entry.value == newValue,
-                                        )
-                                        .key;
-
-                                    context.read<GetCarCardBloc>().add(
-                                      LoadCarsEvent(manufacturerId: newValue, manufacturerName: selectedName),
-                                    );
-
-                                  },
-                                ),
-                              ),
-                            ),
-                          ),
+                          ManufacturerFilterWidget(carBloc: context.read<GetCarCardBloc>()),
                           Expanded(
                             child: GridView.builder(
                               itemCount: uiCarCard.length,
