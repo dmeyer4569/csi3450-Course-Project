@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final getCarsResponse = getCarsResponseFromJson(jsonString);
-
 import 'dart:convert';
 
 List<GetCarsResponse> getCarsResponseFromJson(String str) => List<GetCarsResponse>.from(json.decode(str).map((x) => GetCarsResponse.fromJson(x)));
