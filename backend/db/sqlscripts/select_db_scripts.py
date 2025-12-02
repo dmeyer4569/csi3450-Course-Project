@@ -32,7 +32,7 @@ get_manufact_cars = text(
     WHERE (:manufacturer_id IS NULL OR c.manufacturerID = :manufacturer_id)
     AND (:manufacturer_name IS NULL OR m.manufacturerName LIKE '%' || :manufacturer_name || '%')
     ORDER BY c.year DESC, c.model
-    LIMIT :limit OFFSET :offset;
+    LIMIT 200 OFFSET 0;
     """
 )
 
@@ -65,7 +65,7 @@ get_cars = text(
     )
     LEFT JOIN manufacturers m on m.manufacturerID = c.manufacturerID
     LEFT JOIN images i ON i.imageID = ci.imageID
-    LIMIT :limit OFFSET :offset;
+    LIMIT 200 OFFSET 0;
     """
 )
 
@@ -96,6 +96,6 @@ get_cars_by_manufacturer = text(
     LEFT JOIN images i on i.imageID = ci.imageID
     WHERE c.manufacturerID = :manufacturerID
     ORDER BY c.year DESC, c.model
-    LIMIT :limit OFFSET :offset;
+    LIMIT 200 OFFSET 0;
     """
 )
