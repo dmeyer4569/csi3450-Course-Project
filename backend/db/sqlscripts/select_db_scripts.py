@@ -16,13 +16,23 @@ from sqlalchemy import text
 # cars by manufacturer
 get_manufact_cars = text(
     """
-    SELECT c.carID, c.model, c.year, c.baseMSRP, c.manufacturerID, m.manufacturerName
+    SELECT c.carID, c.model, c.year, c.baseMSRP, c.manufacturerID, m.manufacturerName, m.logoFilePath,
+           i.imageID, i.FileName, i.FilePath, ci.role, ci.addedAt
     FROM cars c
     LEFT JOIN manufacturers m ON m.manufacturerID = c.manufacturerID
+    LEFT JOIN car_images ci ON ci.carID = c.carID
+    AND ci.carImageID = (
+        SELECT ci2.carImageID
+        FROM car_images ci2
+        WHERE ci2.carID = c.carID
+        ORDER BY ci2.addedAt ASC, ci2.carImageID ASC
+        LIMIT 1
+    )
+    LEFT JOIN images i ON i.imageID = ci.imageID
     WHERE (:manufacturer_id IS NULL OR c.manufacturerID = :manufacturer_id)
     AND (:manufacturer_name IS NULL OR m.manufacturerName LIKE '%' || :manufacturer_name || '%')
     ORDER BY c.year DESC, c.model
-    LIMIT :limit OFFSET :offset;
+    LIMIT 200 OFFSET 0;
     """
 )
 
@@ -55,7 +65,7 @@ get_cars = text(
     )
     LEFT JOIN manufacturers m on m.manufacturerID = c.manufacturerID
     LEFT JOIN images i ON i.imageID = ci.imageID
-    LIMIT :limit OFFSET :offset;
+    LIMIT 200 OFFSET 0;
     """
 )
 
@@ -86,6 +96,6 @@ get_cars_by_manufacturer = text(
     LEFT JOIN images i on i.imageID = ci.imageID
     WHERE c.manufacturerID = :manufacturerID
     ORDER BY c.year DESC, c.model
-    LIMIT :limit OFFSET :offset;
+    LIMIT 200 OFFSET 0;
     """
 )

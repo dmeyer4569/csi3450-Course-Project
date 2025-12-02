@@ -5,7 +5,7 @@ guaranteed most abysmal sql scripter in the west.
 
 from sqlalchemy import text
 
-str_limit = " LIMIT :limit OFFSET :offset; "
+str_limit = " LIMIT 200 OFFSET 0; "
 
 str_orderT1_cfm_d = "ORDER BY c.year DESC, c.baseMSRP"
 str_orderT1_cfm_a = "ORDER BY c.year ASC, c.baseMSRP"

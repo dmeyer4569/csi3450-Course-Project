@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 from database.session import get_engine
 from api.init_db_router import init_router
 from api.insert_data_router import insert_data_router
@@ -7,6 +8,7 @@ from api.select_router import select_router
 from api.select_sort_router import select_sort_router
 from api.insert_router import insert_router
 from api.edit_router import edit_router
+from api.delete_router import delete_router
 
 async def lifespan(app: FastAPI):
     engine = get_engine(testing=True)  # Use testing sqlite DB by default
@@ -25,6 +27,7 @@ app = FastAPI(
 )
 
 
+app.mount("/images", StaticFiles(directory="images"), name="images") # for images :D
 
 app.include_router(init_router, prefix="/api/init")  # initialize db tables
 app.include_router(insert_data_router, prefix="/api/init")  # insert data into db
@@ -33,3 +36,4 @@ app.include_router(select_router, prefix="/api")
 app.include_router(select_sort_router, prefix="/api")
 app.include_router(insert_router, prefix="/api") # insert data from frontend to db 
 app.include_router(edit_router, prefix="/api") # edit data in db from frontend
+app.include_router(delete_router, prefix="/api") # delete endpoints
