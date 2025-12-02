@@ -10,18 +10,18 @@ select_router = APIRouter()
 
 # get all manufacturers
 @select_router.get("/get_manufacturers", tags=["Select"])
-async def get_manufacturers(limit: int = 5, offset: int = 0, db: AsyncSession = Depends(get_db)):
+async def get_manufacturers(db: AsyncSession = Depends(get_db)):
     # by default, if no offset or limit are provided will have a offset of 0, and limit of 5
-    raw_result = await db.execute(sel_db.get_manufacturers, {"limit": limit, "offset": offset})
+    raw_result = await db.execute(sel_db.get_manufacturers)
     manufacturers = raw_result.mappings().all()
 
     return manufacturers
 
 # works similar to manufacturers, but for cars + return first image
 @select_router.get("/get_cars", tags=["Select"])
-async def get_cars(limit: int = 10, offset: int = 0, db: AsyncSession = Depends(get_db)):
+async def get_cars(db: AsyncSession = Depends(get_db)):
     # smae like manufact, limit is 10 and offset 0 by default
-    raw_result = await db.execute(sel_db.get_cars, {"limit": limit, "offset": offset})
+    raw_result = await db.execute(sel_db.get_cars)
     cars = raw_result.mappings().all()
 
     return_data = []
@@ -56,9 +56,9 @@ async def get_cars(limit: int = 10, offset: int = 0, db: AsyncSession = Depends(
 
 # get a manufacturer with all their cars
 @select_router.get("/get_manufacturer_cars/{manufacturer_id}", tags=["Select"])
-async def get_manufacturer_cars(manufacturer_id: int, limit: int = 10, offset: int = 0, db: AsyncSession = Depends(get_db)):
+async def get_manufacturer_cars(manufacturer_id: int, db: AsyncSession = Depends(get_db)):
     # get all cars by a manufacturer
-    raw_result = await db.execute(sel_db.get_cars_by_manufacturer, {"manufacturerID": manufacturer_id, "limit": limit, "offset": offset})
+    raw_result = await db.execute(sel_db.get_cars_by_manufacturer, {"manufacturerID": manufacturer_id})
     cars = raw_result.mappings().all()
 
     return_data = []
