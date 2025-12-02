@@ -24,13 +24,13 @@ class GetCarsResponse {
   });
 
   factory GetCarsResponse.fromJson(Map<String, dynamic> json) => GetCarsResponse(
-    carId: json["carID"],
-    model: json["model"],
-    year: json["year"],
-    baseMsrp: json["baseMSRP"],
-    role: roleValues.map[json["role"]]!,
-    manufacturerName: json["manufacturerName"],
-    carImageBase64: json["car_image_base64"],
+    carId: json["carID"] ?? 0,
+    model: json["model"] ?? "Unknown Model",
+    year: json["year"] ?? 0,
+    baseMsrp: json["baseMSRP"] ?? 0,
+    role: roleValues.map[json["role"]] ?? Role.LOGO,
+    manufacturerName: json["manufacturerName"] ?? "Unknown Manufacturer",
+    carImageBase64: json["car_image_path"] ?? "images/null.png",
   );
 
   Map<String, dynamic> toJson() => {
@@ -40,7 +40,7 @@ class GetCarsResponse {
     "baseMSRP": baseMsrp,
     "role": roleValues.reverse[role],
     "manufacturerName": manufacturerName,
-    "car_image_base64": carImageBase64,
+    "car_image_path": carImageBase64,
   };
 }
 

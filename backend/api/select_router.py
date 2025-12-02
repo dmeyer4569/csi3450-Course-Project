@@ -12,7 +12,8 @@ select_router = APIRouter()
 @select_router.get("/get_manufacturers", tags=["Select"])
 async def get_manufacturers(db: AsyncSession = Depends(get_db)):
     # by default, if no offset or limit are provided will have a offset of 0, and limit of 5
-    raw_result = await db.execute(sel_db.get_manufacturers)
+    # Pass the limit and offset values (you can adjust 100 to whatever number you need)
+    raw_result = await db.execute(sel_db.get_manufacturers, {"limit": 100, "offset": 0})
     manufacturers = raw_result.mappings().all()
 
     return manufacturers

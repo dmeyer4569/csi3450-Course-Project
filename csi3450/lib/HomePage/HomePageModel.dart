@@ -1,8 +1,9 @@
+import 'package:csi3450/HomePage/Components/MSRPFilter.dart';
 import 'package:csi3450/HomePage/Components/ManufacturerFilterModel.dart';
+import 'package:csi3450/HomePage/Components/YearFilterModel.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import './Components/CarCardModel.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -75,7 +76,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          ManufacturerFilterWidget(carBloc: context.read<GetCarCardBloc>()),
+                          Row(
+                            children: [
+                              ManufacturerFilterWidget(carBloc: context.read<GetCarCardBloc>()),
+                              MSRPFilterWidget(carBloc: context.read<GetCarCardBloc>()),
+                              YearFilterWidget(carBloc: context.read<GetCarCardBloc>())
+                            ],
+                          ),
                           Expanded(
                             child: GridView.builder(
                               itemCount: uiCarCard.length,

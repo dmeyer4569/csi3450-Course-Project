@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui';
 import 'package:csi3450/HomePage/Components/getCarBloC/get_car_card_bloc.dart';
@@ -34,11 +35,13 @@ class CarCardWidget extends StatefulWidget {
 }
 
 class _CarCardWidgetState extends State<CarCardWidget> {
-  late Uint8List _imageBytes;
+  // late Uint8List _imageBytes;
+  late File imageFile;
 
   void initState() {
     super.initState();
-    _imageBytes = base64Decode(widget.carImageBase64);
+    // _imageBytes = base64Decode(widget.carImageBase64);
+    imageFile = File("C:/Users/naksh/OneDrive/Desktop/csi3450-Course-Project/backend/${widget.carImageBase64}");
   }
 
 
@@ -211,8 +214,9 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                   ),
-                                  child: Image.memory(
-                                    _imageBytes,
+                                  child: Image.file(
+                                    //here, it would be better to pass a file instead, but yknow what, it is what it is.
+                                    imageFile,
                                     fit: BoxFit.contain,
                                   ),
                                 ),
