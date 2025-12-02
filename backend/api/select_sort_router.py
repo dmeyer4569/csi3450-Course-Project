@@ -8,13 +8,13 @@ from db.sqlscripts import crazysqlscripter as crazy_sql
 select_sort_router = APIRouter()
 
 @select_sort_router.get("/get_manufacturers/{manufacturer_id}", tags=["Select"])
-async def get_manufacturers(manufacturer_id: int, limit: int = 5, offset: int = 0, order: int = 0, db: AsyncSession = Depends(get_db)):
+async def get_manufacturers(manufacturer_id: int, order: int = 0, db: AsyncSession = Depends(get_db)):
 
     # default 0 = descending c.year, 1 = ascending c.year, 2 = descending c.baseMSRP, 3 = ascending c.baseMSRP
 
     query_script = crazy_sql.custom_car_from_manu_script(order)
 
-    raw_result = await db.execute(query_script, {"manufacturerID": manufacturer_id, "limit": limit, "offset": offset})
+    raw_result = await db.execute(query_script, {"manufacturerID": manufacturer_id})
     cars = raw_result.mappings().all()
 
     return_data = []
