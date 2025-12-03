@@ -11,6 +11,84 @@ images = [
     {"FileName": "tesla_logo.png", "FilePath": "images/tesla_logo.png", "Description": "Tesla logo"},
     {"FileName": "mercedes_logo.png", "FilePath": "images/mercedes_logo.png", "Description": "Mercedes Logo"},
 
+    #images
+    {"FileName": "F-150.png", "FilePath": "images/F-150.png", "Description": "Ford F-150"},
+    {"FileName": "F-150(2).jpg", "FilePath": "images/F-150(2).jpg", "Description": "Ford F-150 side view"},
+    {"FileName": "F-150(3).jpg", "FilePath": "images/F-150(3).jpg", "Description": "Ford F-150 rear view"},
+
+    {"FileName": "Mustang(1).jpg", "FilePath": "images/Mustang(1).jpg", "Description": "Ford Mustang front view"},
+    {"FileName": "Mustang(2).jpg", "FilePath": "images/Mustang(2).jpg", "Description": "Ford Mustang side view"},
+    {"FileName": "Mustang(3).jpg", "FilePath": "images/Mustang(3).jpg", "Description": "Ford Mustang rear view"},
+
+    {"FileName": "Explorer(1).jpg", "FilePath": "images/Explorer(1).jpg", "Description": "Ford Explorer front view"},
+    {"FileName": "Explorer(2).jpg", "FilePath": "images/Explorer(2).jpg", "Description": "Ford Explorer side view"},
+    {"FileName": "Explorer(3).jpg", "FilePath": "images/Explorer(3).jpg", "Description": "Ford Explorer second front view"},
+
+    {"FileName": "Camry(1).jpg", "FilePath": "images/Camry(1).jpg", "Description": "Toyota Camry front view"},
+    {"FileName": "Camry(2).jpg", "FilePath": "images/Camry(2).jpg", "Description": "Toyota Camry side view"},
+    {"FileName": "Camry(3).jpg", "FilePath": "images/Camry(3).jpg", "Description": "Toyota Camry second front view"},
+
+    {"FileName": "Corolla(1).jpg", "FilePath": "images/Corolla(1).jpg", "Description": "Toyota Corolla front view"},
+    {"FileName": "Corolla(2).jpg", "FilePath": "images/Corolla(2).jpg", "Description": "Toyota Corolla back view"},
+
+    {"FileName": "RAV4(1).jpg", "FilePath": "images/RAV4(1).jpg", "Description": "Toyota RAV4 front view"},
+    {"FileName": "RAV4(2).jpg", "FilePath": "images/RAV4(2).jpg", "Description": "Toyota RAV4 side view"},
+    {"FileName": "RAV4(3).jpg", "FilePath": "images/RAV4(3).jpg", "Description": "Toyota RAV4 rear view"},
+
+    {"FileName": "Civic(1).jpg", "FilePath": "images/Civic(1).jpg", "Description": "Honda Civic front view"},
+    {"FileName": "Civic(2).jpg", "FilePath": "images/Civic(2).jpg", "Description": "Honda Civic side view"},
+    {"FileName": "Civic(3).jpg", "FilePath": "images/Civic(3).jpg", "Description": "Honda Civic rear view"},
+
+    {"FileName": "Accord(1).jpg", "FilePath": "images/Accord(1).jpg", "Description": "Honda Accord front view"},
+    {"FileName": "Accord(2).jpg", "FilePath": "images/Accord(2).jpg", "Description": "Honda Accord side view"},
+    {"FileName": "Accord(3).jpg", "FilePath": "images/Accord(3).jpg", "Description": "Honda Accord rear view"},
+
+    {"FileName": "CR-V(1).jpg", "FilePath": "images/CR-V(1).jpg", "Description": "Honda CR-V front view"},
+    {"FileName": "CR-V(2).jpg", "FilePath": "images/CR-V(2).jpg", "Description": "Honda CR-V side view"},
+    {"FileName": "CR-V(3).jpg", "FilePath": "images/CR-V(3).jpg", "Description": "Honda CR-V rear view"},
+
+    {"FileName": "3-series(1).jpg", "FilePath": "images/3-series.jpg", "Description": "BMW 3 Series front view"},
+    {"FileName": "3-series(2).jpg", "FilePath": "images/3-series(2).jpg", "Description": "BMW 3 Series side view"},
+    {"FileName": "3-series(3).jpg", "FilePath": "images/3-series(3).jpg", "Description": "BMW 3 Series rear view"},
+
+    {"FileName": "X5.jpg", "FilePath": "images/X5(1).jpg", "Description": "BMW X5 front view"},
+    {"FileName": "X5(2).jpg", "FilePath": "images/X5(2).jpg", "Description": "BMW X5 back view"},
+
+    {"FileName": "I4(1).jpg", "FilePath": "images/i4(1).jpg", "Description": "BMW I4 front view"},
+    {"FileName": "I4(2).jpg", "FilePath": "images/i4(2).jpg", "Description": "BMW I4 side view"},
+    {"FileName": "I4(3).jpg", "FilePath": "images/i4(3).jpg", "Description": "BMW I4 rear view"},
+
+    {"FileName": "Model_S(1).jpg", "FilePath": "images/ModelS(1).jpg", "Description": "Tesla Model S front view"},
+    {"FileName": "Model_S(2).jpg", "FilePath": "images/ModelS(2).jpg", "Description": "Tesla Model S side view"},
+    {"FileName": "Model_S(3).jpg", "FilePath": "images/ModelS(3).jpg", "Description": "Tesla Model S rear view"},
+
+    {"FileName": "Model_3(1).jpg", "FilePath": "images/Model3(1).jpg", "Description": "Tesla Model 3 front view"},
+    {"FileName": "Model_3(2).jpg", "FilePath": "images/Model3(2).jpg", "Description": "Tesla Model 3 side view"},
+    {"FileName": "Model_3(3).jpg", "FilePath": "images/Model3(3).jpg", "Description": "Tesla Model 3 top view"},
+
+    {"FileName": "Model_Y(1).jpg", "FilePath": "images/ModelY(1).jpg", "Description": "Tesla Model Y front view"},
+    {"FileName": "Model_Y(2).jpg", "FilePath": "images/ModelY(2).jpg", "Description": "Tesla Model Y side view"},
+    {"FileName": "Model_Y(3).jpg", "FilePath": "images/ModelY(3).jpg", "Description": "Tesla Model Y rear view"},
+
+    {"FileName": "C-Class(1).jpg", "FilePath": "images/C-Class(1).jpg", "Description": "Mercedes C-Class front view"},
+    {"FileName": "C-Class(2).jpg", "FilePath": "images/C-Class(2).jpg", "Description": "Mercedes C-Class side view"},
+    
+    {"FileName": "E-Class(1).jpg", "FilePath": "images/E-Class(1).jpg", "Description": "Mercedes E-Class front view"},
+    {"FileName": "E-Class(2).jpg", "FilePath": "images/E-Class(2).jpg", "Description": "Mercedes E-Class side view"},
+    {"FileName": "E-Class(3).jpg", "FilePath": "images/E-Class(3).jpg", "Description": "Mercedes E-Class rear view"},
+
+    {"FileName": "S-Class(1).jpg", "FilePath": "images/S-Class(1).jpg", "Description": "Mercedes S-Class front view"},
+    {"FileName": "S-Class(2).jpg", "FilePath": "images/S-Class(2).jpg", "Description": "Mercedes S-Class side view"},
+    {"FileName": "S-Class(3).jpg", "FilePath": "images/S-Class(3).jpg", "Description": "Mercedes S-Class rear view"},
+
+    {"FileName": "GLC(1).jpg", "FilePath": "images/GLC(1).jpg", "Description": "Mercedes GLC front view"},
+    {"FileName": "GLC(2).jpg", "FilePath": "images/GLC(2).jpg", "Description": "Mercedes GLC side view"},
+    {"FileName": "GLC(3).jpg", "FilePath": "images/GLC(3).jpg", "Description": "Mercedes GLC rear view"},
+
+    {"FileName": "GLE(1).jpg", "FilePath": "images/GLE(1).jpg", "Description": "Mercedes GLE front view"},
+    {"FileName": "GLE(2).jpg", "FilePath": "images/GLE(2).jpg", "Description": "Mercedes GLE side view"},
+    {"FileName": "GLE(3).jpg", "FilePath": "images/GLE(3).jpg", "Description": "Mercedes GLE rear view"},
+
     {"FileName": "A42024Black.jpg", "FilePath": "images/A42024Black.jpg", "Description": "A4 2024 Black"},
     {"FileName": "A42024Red.jpg", "FilePath": "images/A42024Red.jpg", "Description": "A4 2024 Red"},
     {"FileName": "A42024White.webp", "FilePath": "images/A42024White.webp", "Description": "A4 2024 White"},
