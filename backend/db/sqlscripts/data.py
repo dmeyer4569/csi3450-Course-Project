@@ -9,6 +9,7 @@ images = [
     {"FileName": "honda_logo.png", "FilePath": "images/honda_logo.png", "Description": "Honda logo"},
     {"FileName": "bmw_logo.png", "FilePath": "images/bmw_logo.png", "Description": "BMW logo"},
     {"FileName": "tesla_logo.png", "FilePath": "images/tesla_logo.png", "Description": "Tesla logo"},
+    {"FileName": "mercedes_logo.png", "FilePath": "images/mercedes_logo.png", "Description": "Mercedes Logo"},
 ]
 
 manufacturers = [
@@ -229,6 +230,8 @@ car_images = [
     {"carID": 13, "imageID": 5, "role":"logo"},
     {"carID": 14, "imageID": 5, "role":"logo"},
     {"carID": 15, "imageID": 5, "role":"logo"},
+
+    {"carID": 16, "imageID": 6, "role":"logo"},
 
 ]
 __all__ = ["images", "manufacturers", "cars"]
