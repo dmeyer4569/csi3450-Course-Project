@@ -9,6 +9,8 @@ images = [
     {"FileName": "honda_logo.png", "FilePath": "images/honda_logo.png", "Description": "Honda logo"},
     {"FileName": "bmw_logo.png", "FilePath": "images/bmw_logo.png", "Description": "BMW logo"},
     {"FileName": "tesla_logo.png", "FilePath": "images/tesla_logo.png", "Description": "Tesla logo"},
+    {"FileName": "mercedes_logo.png", "FilePath": "images/mercedes_logo.png", "Description": "Mercedes Logo"},
+
     {"FileName": "A42024Black.jpg", "FilePath": "images/A42024Black.jpg", "Description": "A4 2024 Black"},
     {"FileName": "A42024Red.jpg", "FilePath": "images/A42024Red.jpg", "Description": "A4 2024 Red"},
     {"FileName": "A42024White.webp", "FilePath": "images/A42024White.webp", "Description": "A4 2024 White"},
@@ -104,7 +106,7 @@ images = [
 
     {"FileName": "Senna2024Blue.jpg", "FilePath": "images/Senna2024Blue.jpg", "Description": "Senna 2024 Blue"},
     {"FileName": "Senna2024Grey.jpg", "FilePath": "images/Senna2024Grey.jpg", "Description": "Senna 2024 Grey"},
-    {"FileName": "Senna2024Orange.jpg", "FilePath": "images/Senna2024Orange.jpg", "Description": "Senna 2024 Orange"}
+    {"FileName": "Senna2024Orange.jpg", "FilePath": "images/Senna2024Orange.jpg", "Description": "Senna 2024 Orange"},
 
     
 ]
@@ -329,6 +331,7 @@ car_images = [
     {"carID": 13, "imageID": 5, "role":"logo"},
     {"carID": 14, "imageID": 5, "role":"logo"},
     {"carID": 15, "imageID": 5, "role":"logo"},
+    {"carID": 16, "imageID": 6, "role":"logo"},
 
     {"carID": 21, "imageID": 6, "role": "gallery"},
     {"carID": 21, "imageID": 7, "role": "gallery"},
