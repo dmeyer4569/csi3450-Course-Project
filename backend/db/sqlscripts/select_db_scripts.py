@@ -16,32 +16,46 @@ from sqlalchemy import text
 # cars by manufacturer
 get_manufact_cars = text(
     """
-    SELECT c.carID, c.model, c.year, c.baseMSRP, c.manufacturerID, m.manufacturerName, m.logoFilePath,
-           i.imageID, i.FileName, i.FilePath, ci.role, ci.addedAt
+    WITH ranked_images AS (
+        SELECT *,
+            ROW_NUMBER() OVER (
+                PARTITION BY carID
+                ORDER BY addedAt ASC, carImageID ASC
+            ) AS rn
+        FROM car_images
+    )
+    SELECT
+        c.carID,
+        c.model,
+        c.year,
+        c.baseMSRP,
+        c.manufacturerID,
+        m.manufacturerName,
+        m.logoFilePath,
+        i.imageID,
+        i.FileName,
+        i.FilePath,
+        ci.role,
+        ci.addedAt
     FROM cars c
     LEFT JOIN manufacturers m ON m.manufacturerID = c.manufacturerID
-    LEFT JOIN car_images ci ON ci.carID = c.carID
-    AND ci.carImageID = (
-        SELECT ci2.carImageID
-        FROM car_images ci2
-        WHERE ci2.carID = c.carID
-        ORDER BY ci2.addedAt ASC, ci2.carImageID ASC
-        LIMIT 1
-    )
+    LEFT JOIN ranked_images ci 
+        ON ci.carID = c.carID AND ci.rn = 1
     LEFT JOIN images i ON i.imageID = ci.imageID
     WHERE (:manufacturer_id IS NULL OR c.manufacturerID = :manufacturer_id)
-    AND (:manufacturer_name IS NULL OR m.manufacturerName LIKE '%' || :manufacturer_name || '%')
     ORDER BY c.year DESC, c.model
     LIMIT 200 OFFSET 0;
+
     """
 )
 
 # get all manufacturers
 get_manufacturers = text(
     """
-    SELECT * 
-    FROM manufacturers
-    LIMIT :limit OFFSET :offset;
+    SELECT m.manufacturerID, m.manufacturerName, m.established, m.headquarters, 
+        m.description, m.logoID, i.imageID, i.FileName, i.FilePath
+    FROM manufacturers m
+    LEFT JOIN images i ON i.imageID = m.logoID;
     """
 )
 
