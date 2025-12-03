@@ -10,6 +10,16 @@ images = [
     {"FileName": "bmw_logo.png", "FilePath": "images/bmw_logo.png", "Description": "BMW logo"},
     {"FileName": "tesla_logo.png", "FilePath": "images/tesla_logo.png", "Description": "Tesla logo"},
     {"FileName": "mercedes_logo.png", "FilePath": "images/mercedes_logo.png", "Description": "Mercedes Logo"},
+    {"Filename": "audi_logo.png", "FilePath": "images/audi_logo.png", "Description": "Audi Logo"},
+    {"Filename": "ferrari_logo.png", "FilePath": "images/ferrari_logo.png", "Description": "Ferrari Logo"},
+    {"Filename": "lamborghini_logo.png", "FilePath": "images/lamborghini_logo.png", "Description": "Lamborghini Logo"},
+    {"Filename": "vw_logo.png", "FilePath": "images/vw_logo.png", "Description": "VW Logo"},
+    {"Filename": "mclaren_logo.png", "FilePath": "images/mclaren_logo.png", "Description": "McLaren Logo"},
+    {"Filename": "pagani_logo.png", "FilePath": "images/pagani_logo.png", "Description": "Pagani Logo"},
+    {"Filename": "koenigsegg_logo.png", "FilePath": "images/koenigsegg_logo.png", "Description": "Koenigsegg Logo"},
+    {"Filename": "renault_logo.png", "FilePath": "images/renault_logo.png", "Description": "Renault Logo"},
+    {"Filename": "bugatti_logo.png", "FilePath": "images/bugatti_logo.png", "Description": "Bugatti Logo"},
+
 
     #images
     {"FileName": "F-150.png", "FilePath": "images/F-150.png", "Description": "Ford F-150"},
