@@ -28,8 +28,6 @@ async def get_manufacturers(manufacturer_id: int, order: int = 0, db: AsyncSessi
         print(file_path)
 
 
-        car_data["car_image_path"] = image_path
-        car_data.pop("FilePath", None)
         car_data.pop("imageID", None)
         car_data.pop("manufacturerID", None)
         car_data.pop("FileName", None)
