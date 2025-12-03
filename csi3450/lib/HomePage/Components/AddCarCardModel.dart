@@ -1,3 +1,4 @@
+import 'package:csi3450/HomePage/Components/AddCarDialogModel.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,7 +12,7 @@ class AddCarCardWidget extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: GestureDetector(
         onTap: () => {
-          print("Hello")
+          AddCarDialog.show(context)
         },
         child: Container(
           width: 200,

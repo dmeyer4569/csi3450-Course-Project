@@ -12,6 +12,7 @@ class GetCarsResponse {
   Role role;
   String manufacturerName;
   String carImageBase64;
+  String carPath;
 
   GetCarsResponse({
     required this.carId,
@@ -21,6 +22,7 @@ class GetCarsResponse {
     required this.role,
     required this.manufacturerName,
     required this.carImageBase64,
+    required this.carPath
   });
 
   factory GetCarsResponse.fromJson(Map<String, dynamic> json) => GetCarsResponse(
@@ -30,7 +32,8 @@ class GetCarsResponse {
     baseMsrp: json["baseMSRP"] ?? 0,
     role: roleValues.map[json["role"]] ?? Role.LOGO,
     manufacturerName: json["manufacturerName"] ?? "Unknown Manufacturer",
-    carImageBase64: json["car_image_path"] ?? "images/null.png",
+    carImageBase64: json["manufacturer_logo_path"] ?? "images/null.png",
+    carPath: json["car_image_path"] ?? "images/null.png"
   );
 
   Map<String, dynamic> toJson() => {
@@ -40,7 +43,8 @@ class GetCarsResponse {
     "baseMSRP": baseMsrp,
     "role": roleValues.reverse[role],
     "manufacturerName": manufacturerName,
-    "car_image_path": carImageBase64,
+    "manufacturer_logo_path": carImageBase64,
+    "car_image_path": carPath
   };
 }
 

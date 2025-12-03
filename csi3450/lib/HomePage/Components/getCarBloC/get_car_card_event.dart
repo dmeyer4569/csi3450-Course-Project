@@ -66,3 +66,27 @@ class LoadEditCar extends GetCarCardEvent {
     manufacturerId ?? 1,
   ];
 }
+
+class LoadAddCar extends GetCarCardEvent {
+  final String model;
+  final int year;
+  final int baseMsrp;
+  final int manufacturerId;
+  final String imagePath;
+
+  const LoadAddCar({
+    required this.model,
+    required this.year,
+    required this.baseMsrp,
+    required this.manufacturerId,
+    required this.imagePath
+  });
+
+  List<Object> get props => [
+    model ?? "unknown model",
+    year ?? 0,
+    baseMsrp ?? 9999999999,
+    manufacturerId ?? 1,
+    imagePath ?? "images/null.png"
+  ];
+}

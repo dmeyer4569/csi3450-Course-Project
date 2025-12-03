@@ -1,4 +1,5 @@
 import 'package:csi3450/HomePage/Components/ResponseModels/Returns/GetManufacturerCarsResponse.dart';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:csi3450/apiconfig.dart';
@@ -161,5 +162,43 @@ class Api{
     );
 
     return response.statusCode;
+  }
+
+  static Future<int> addCar(String model, int year, int baseMsrp, int manufacturerId, String imagePath) async {
+    final url = Uri.http(
+        AppConfig.insertCar.ip,
+        AppConfig.insertCar.link,
+        {
+          'model': model,
+          'year': year.toString(),
+          'baseMSRP': baseMsrp.toString(),
+          'manufacturerID': manufacturerId.toString(),
+        }
+    );
+
+    final request = http.MultipartRequest('POST', url);
+    request.headers.addAll({
+      "Accept": "application/json",
+    });
+
+    request.files.add(
+      await http.MultipartFile.fromPath(
+        'images',
+        imagePath,
+      ),
+    );
+
+    try {
+      final streamedResponse = await request.send();
+      final response = await http.Response.fromStream(streamedResponse);
+
+      return response.statusCode;
+    } catch (e) {
+      // Handle connection errors
+      if (kDebugMode) {
+        print("Error uploading car: $e");
+      }
+      return 500;
+    }
   }
 }

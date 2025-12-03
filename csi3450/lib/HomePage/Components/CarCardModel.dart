@@ -20,6 +20,7 @@ class CarCardWidget extends StatefulWidget {
   final int baseMsrp;
   final String manufacturerName;
   final String carImageBase64;
+  final String carImagePath;
 
   const CarCardWidget({
     super.key,
@@ -29,6 +30,7 @@ class CarCardWidget extends StatefulWidget {
     required this.baseMsrp,
     required this.manufacturerName,
     required this.carImageBase64,
+    required this.carImagePath,
   });
 
   @override
@@ -37,14 +39,10 @@ class CarCardWidget extends StatefulWidget {
 
 class _CarCardWidgetState extends State<CarCardWidget> {
   // late Uint8List _imageBytes;
-  late File imageFile;
 
   void initState() {
     super.initState();
     // _imageBytes = base64Decode(widget.carImageBase64);
-    imageFile = File(
-      "C:/Users/naksh/OneDrive/Desktop/csi3450-Course-Project/backend/${widget.carImageBase64}",
-    );
   }
 
   @override
@@ -106,7 +104,7 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                                       topRight: Radius.circular(0),
                                     ),
                                     child: Image.network(
-                                      'https://picsum.photos/seed/4/600',
+                                      "http://127.0.0.1:8000/${widget.carImagePath}",
                                       width: 200,
                                       height: MediaQuery.sizeOf(context).height,
                                       fit: BoxFit.fill,
@@ -265,9 +263,9 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                   ),
-                                  child: Image.file(
+                                  child: Image.network(
                                     //here, it would be better to pass a file instead, but yknow what, it is what it is.
-                                    imageFile,
+                                    "http://127.0.0.1:8000/${widget.carImageBase64}",
                                     fit: BoxFit.contain,
                                   ),
                                 ),
