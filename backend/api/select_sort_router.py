@@ -26,15 +26,8 @@ async def get_manufacturers(manufacturer_id: int, order: int = 0, db: AsyncSessi
         # verify image actually exists and extract relative path
         file_path = car_data.get("FilePath")
         print(file_path)
-        if file_path:
-            abs_path = os.path.join(os.getcwd(), file_path)
-            print(abs_path)
-            if os.path.exists(abs_path):
-                # Extract relative path from 'images' onwards
-                image_path = file_path[file_path.find('images'):] if 'images' in file_path else file_path
 
-        car_data["car_image_path"] = image_path
-        car_data.pop("FilePath", None)
+
         car_data.pop("imageID", None)
         car_data.pop("manufacturerID", None)
         car_data.pop("FileName", None)
