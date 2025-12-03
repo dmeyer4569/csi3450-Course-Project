@@ -17,6 +17,7 @@ class GetManufacturersCarResponse {
   String role;
   DateTime addedAt;
   String carImageBase64;
+  String carImagePath;
 
   GetManufacturersCarResponse({
     required this.carId,
@@ -27,6 +28,7 @@ class GetManufacturersCarResponse {
     required this.role,
     required this.addedAt,
     required this.carImageBase64,
+    required this.carImagePath,
   });
 
   factory GetManufacturersCarResponse.fromJson(Map<String, dynamic> json) => GetManufacturersCarResponse(
@@ -41,6 +43,7 @@ class GetManufacturersCarResponse {
         : (DateTime.tryParse(json["addedAt"]) ?? DateTime.now()),
 
     carImageBase64: json["car_image_base64"] ?? "images/null.png",
+    carImagePath: json["car_image_path"] ?? "images/null.png"
   );
 
   Map<String, dynamic> toJson() => {

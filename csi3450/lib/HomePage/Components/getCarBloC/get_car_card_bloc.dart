@@ -38,6 +38,7 @@ class GetCarCardBloc extends Bloc<GetCarCardEvent, GetCarCardState> {
               baseMsrp: car.baseMsrp ?? 0,
               manufacturerName: car.manufacturerName ?? "Unknown Make",
               carImageBase64: car.carImageBase64 ?? "",
+              carImagePath: car.carPath,
             );
           }).toList();
         } else {
@@ -57,7 +58,8 @@ class GetCarCardBloc extends Bloc<GetCarCardEvent, GetCarCardState> {
                 year: car.year ?? 2024,
                 baseMsrp: car.baseMsrp ?? 0,
                 manufacturerName: manufacturerName ?? "Unknown Make",
-                carImageBase64: car.carImageBase64 ?? "",
+                carImageBase64: car.carImageBase64 ?? "images/null.png",
+                carImagePath: car.carImagePath,
             );
           }).toList();
         }
@@ -94,6 +96,7 @@ class GetCarCardBloc extends Bloc<GetCarCardEvent, GetCarCardState> {
               baseMsrp: car.baseMsrp ?? 0,
               manufacturerName: car.manufacturerName ?? "Unknown Make",
               carImageBase64: car.carImageBase64 ?? "",
+              carImagePath: car.carPath,
             );
           }).toList();
         } else if(valueOrder == 0){
@@ -112,6 +115,7 @@ class GetCarCardBloc extends Bloc<GetCarCardEvent, GetCarCardState> {
               baseMsrp: car.baseMsrp ?? 0,
               manufacturerName: manufacturerName ?? "Unknown Make",
               carImageBase64: car.carImageBase64 ?? "",
+              carImagePath: car.carImagePath,
             );
           }).toList();
         }else if(valueOrder == 1) {
@@ -132,6 +136,7 @@ class GetCarCardBloc extends Bloc<GetCarCardEvent, GetCarCardState> {
               baseMsrp: car.baseMsrp ?? 0,
               manufacturerName: manufacturerName ?? "Unknown Make",
               carImageBase64: car.carImageBase64 ?? "",
+              carImagePath: car.carImagePath,
             );
           }).toList();
         } else if(valueOrder == 2) {
@@ -152,6 +157,7 @@ class GetCarCardBloc extends Bloc<GetCarCardEvent, GetCarCardState> {
               baseMsrp: car.baseMsrp ?? 0,
               manufacturerName: manufacturerName ?? "Unknown Make",
               carImageBase64: car.carImageBase64 ?? "",
+              carImagePath: car.carImagePath,
             );
           }).toList();
         } else if(valueOrder == 3) {
@@ -172,6 +178,7 @@ class GetCarCardBloc extends Bloc<GetCarCardEvent, GetCarCardState> {
               baseMsrp: car.baseMsrp ?? 0,
               manufacturerName: manufacturerName ?? "Unknown Make",
               carImageBase64: car.carImageBase64 ?? "",
+              carImagePath: car.carImagePath,
             );
           }).toList();
         }
@@ -209,6 +216,7 @@ class GetCarCardBloc extends Bloc<GetCarCardEvent, GetCarCardState> {
               baseMsrp: car.baseMsrp ?? 0,
               manufacturerName: car.manufacturerName ?? "Unknown Make",
               carImageBase64: car.carImageBase64 ?? "",
+              carImagePath: car.carPath,
             );
           }).toList();
         }
@@ -252,11 +260,50 @@ class GetCarCardBloc extends Bloc<GetCarCardEvent, GetCarCardState> {
               baseMsrp: car.baseMsrp ?? 0,
               manufacturerName: car.manufacturerName ?? "Unknown Make",
               carImageBase64: car.carImageBase64 ?? "",
+              carImagePath: car.carPath,
             );
           }).toList();
 
           emit(GetCarCardLoadedState(uiCars));
         }
+      } catch (e) {
+        emit(GetCarCardErrorState(e.toString()));
+        if (kDebugMode) {
+          print(e);
+        }
+      }
+    });
+
+    on<LoadAddCar>((event, emit) async {
+      emit(GetCarCardLoadingState());
+
+
+      try {
+        late final List<CarCardWidget> uiCars;
+        final int? statusCode = await Api.addCar(event.model, event.year, event.baseMsrp, event.manufacturerId, event.imagePath);
+
+        if (statusCode == 200) {
+          final List<GetCarsResponse>? getCarsResponse = await Api.getCars();
+
+          if (getCarsResponse == null) {
+            emit(const GetCarCardErrorState("Failed to fetch data"));
+            return;
+          }
+
+          uiCars = getCarsResponse.map((car) {
+            return CarCardWidget(
+              carId: car.carId,
+              model: car.model ?? "Unknown Model",
+              year: car.year ?? 2024,
+              baseMsrp: car.baseMsrp ?? 0,
+              manufacturerName: car.manufacturerName ?? "Unknown Make",
+              carImageBase64: car.carImageBase64 ?? "",
+              carImagePath: car.carPath,
+            );
+          }).toList();
+        }
+
+        emit(GetCarCardLoadedState(uiCars));
       } catch (e) {
         emit(GetCarCardErrorState(e.toString()));
         if (kDebugMode) {
