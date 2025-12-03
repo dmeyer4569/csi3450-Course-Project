@@ -10,15 +10,15 @@ images = [
     {"FileName": "bmw_logo.png", "FilePath": "images/bmw_logo.png", "Description": "BMW logo"},
     {"FileName": "tesla_logo.png", "FilePath": "images/tesla_logo.png", "Description": "Tesla logo"},
     {"FileName": "mercedes_logo.png", "FilePath": "images/mercedes_logo.png", "Description": "Mercedes Logo"},
-    {"Filename": "audi_logo.png", "FilePath": "images/audi_logo.png", "Description": "Audi Logo"},
-    {"Filename": "ferrari_logo.png", "FilePath": "images/ferrari_logo.png", "Description": "Ferrari Logo"},
-    {"Filename": "lamborghini_logo.png", "FilePath": "images/lamborghini_logo.png", "Description": "Lamborghini Logo"},
-    {"Filename": "vw_logo.png", "FilePath": "images/vw_logo.png", "Description": "VW Logo"},
-    {"Filename": "mclaren_logo.png", "FilePath": "images/mclaren_logo.png", "Description": "McLaren Logo"},
-    {"Filename": "pagani_logo.png", "FilePath": "images/pagani_logo.png", "Description": "Pagani Logo"},
-    {"Filename": "koenigsegg_logo.png", "FilePath": "images/koenigsegg_logo.png", "Description": "Koenigsegg Logo"},
-    {"Filename": "renault_logo.png", "FilePath": "images/renault_logo.png", "Description": "Renault Logo"},
-    {"Filename": "bugatti_logo.png", "FilePath": "images/bugatti_logo.png", "Description": "Bugatti Logo"},
+    {"FileName": "audi_logo.png", "FilePath": "images/audi_logo.png", "Description": "Audi Logo"},
+    {"FileName": "ferrari_logo.png", "FilePath": "images/ferrari_logo.png", "Description": "Ferrari Logo"},
+    {"FileName": "lamborghini_logo.png", "FilePath": "images/lamborghini_logo.png", "Description": "Lamborghini Logo"},
+    {"FileName": "vw_logo.png", "FilePath": "images/vw_logo.png", "Description": "VW Logo"},
+    {"FileName": "mclaren_logo.png", "FilePath": "images/mclaren_logo.png", "Description": "McLaren Logo"},
+    {"FileName": "pagani_logo.png", "FilePath": "images/pagani_logo.png", "Description": "Pagani Logo"},
+    {"FileName": "koenigsegg_logo.png", "FilePath": "images/koenigsegg_logo.png", "Description": "Koenigsegg Logo"},
+    {"FileName": "renault_logo.png", "FilePath": "images/renault_logo.png", "Description": "Renault Logo"},
+    {"FileName": "bugatti_logo.png", "FilePath": "images/bugatti_logo.png", "Description": "Bugatti Logo"},
 
 
     #images
@@ -196,6 +196,78 @@ images = [
     {"FileName": "Senna2024Grey.jpg", "FilePath": "images/Senna2024Grey.jpg", "Description": "Senna 2024 Grey"},
     {"FileName": "Senna2024Orange.jpg", "FilePath": "images/Senna2024Orange.jpg", "Description": "Senna 2024 Orange"},
 
+    {"FileName": "bolide-1.jpg", "FilePath": "images/bolide-1.jpg", "Description": "Gallery"},
+    {"FileName": "bolide-2.webp", "FilePath": "images/bolide-2.webp", "Description": "Gallery"},
+    {"FileName": "bolide-3.jpg", "FilePath": "images/bolide-3.jpg", "Description": "Gallery"},
+
+    {"FileName": "veyron-1.webp", "FilePath": "images/veyron-1.webp", "Description": "Gallery"},
+    {"FileName": "veyron-2.jpg", "FilePath": "images/veyron-2.jpg", "Description": "Gallery"},
+    {"FileName": "veyron-3.webp", "FilePath": "images/veyron-3.webp", "Description": "Gallery"},
+
+    {"FileName": "cento-1.jpg", "FilePath": "images/cento-1.jpg", "Description": "Gallery"},
+    {"FileName": "cento-2.jpg", "FilePath": "images/cento-2.jpg", "Description": "Gallery"},
+    {"FileName": "cento-3.jpg", "FilePath": "images/cento-3.jpg", "Description": "Gallery"},
+
+    {"FileName": "divo-1.jpg", "FilePath": "images/divo-1.jpg", "Description": "Gallery"},
+    {"FileName": "divo-2.jpg", "FilePath": "images/divo-2.jpg", "Description": "Gallery"},
+    {"FileName": "divo-3.jpg", "FilePath": "images/divo-3.jpg", "Description": "Gallery"},
+
+    {"FileName": "chiron-1.jpg", "FilePath": "images/chiron-1.jpg", "Description": "Gallery"},
+    {"FileName": "chiron-1.webp", "FilePath": "images/chiron-1.webp", "Description": "Gallery"},
+    {"FileName": "chiron-2.jpg", "FilePath": "images/chiron-2.jpg", "Description": "Gallery"},
+
+    {"FileName": "austral-1.jpg", "FilePath": "images/austral-1.jpg", "Description": "Gallery"},
+
+    {"FileName": "arkana-1.jpg", "FilePath": "images/arkana-1.jpg", "Description": "Gallery"},
+
+    {"FileName": "captur-1.jpg", "FilePath": "images/captur-1.jpg", "Description": "Gallery"},
+
+    {"FileName": "megane-1.jpg", "FilePath": "images/megane-1.jpg", "Description": "Gallery"},
+
+    {"FileName": "clio-1.jpg", "FilePath": "images/clio-1.jpg", "Description": "Gallery"},
+    {"FileName": "clio-2.webp", "FilePath": "images/clio-2.webp", "Description": "Gallery"},
+    {"FileName": "clio-3.webp", "FilePath": "images/clio-3.webp", "Description": "Gallery"},
+
+    {"FileName": "ono-1.jpg", "FilePath": "images/ono-1.jpg", "Description": "Gallery"},
+    {"FileName": "ono-2.webp", "FilePath": "images/ono-2.webp", "Description": "Gallery"},
+    {"FileName": "ono-3.webp", "FilePath": "images/ono-3.webp", "Description": "Gallery"},
+
+    {"FileName": "gemera-1.jpg", "FilePath": "images/gemera-1.jpg", "Description": "Gallery"},
+    {"FileName": "gemera-2.jpg", "FilePath": "images/gemera-2.jpg", "Description": "Gallery"},
+    {"FileName": "gemera-3.jpg", "FilePath": "images/gemera-3.jpg", "Description": "Gallery"},
+
+    {"FileName": "agerars-1.jpg", "FilePath": "images/agerars-1.jpg", "Description": "Gallery"},
+    {"FileName": "agerars-2.jpg", "FilePath": "images/agerars-2.jpg", "Description": "Gallery"},
+    {"FileName": "agerars-3.jpg", "FilePath": "images/agerars-3.jpg", "Description": "Gallery"},
+
+    {"FileName": "regera-1.jpg", "FilePath": "images/regera-1.jpg", "Description": "Gallery"},
+    {"FileName": "regera-2.jpg", "FilePath": "images/regera-2.jpg", "Description": "Gallery"},
+    {"FileName": "regera-3.jpg", "FilePath": "images/regera-3.jpg", "Description": "Gallery"},
+
+    {"FileName": "jesko-1.jpg", "FilePath": "images/jesko-1.jpg", "Description": "Gallery"},
+    {"FileName": "jesko-2.jpg", "FilePath": "images/jesko-2.jpg", "Description": "Gallery"},
+    {"FileName": "jesko-3.jpg", "FilePath": "images/jesko-3.jpg", "Description": "Gallery"},
+
+    {"FileName": "zondacinque-1.jpg", "FilePath": "images/zondacinque-1.jpg", "Description": "Gallery"},
+    {"FileName": "zondacinque-2.jpg", "FilePath": "images/zondacinque-2.jpg", "Description": "Gallery"},
+    {"FileName": "zondacinque-3.jpg", "FilePath": "images/zondacinque-3.jpg", "Description": "Gallery"},
+
+    {"FileName": "utopia-1.jpg", "FilePath": "images/utopia-1.jpg", "Description": "Gallery"},
+    {"FileName": "utopia-2.jpg", "FilePath": "images/utopia-2.jpg", "Description": "Gallery"},
+    {"FileName": "utopia-3.jpg", "FilePath": "images/utopia-3.jpg", "Description": "Gallery"},
+
+    {"FileName": "huayra-1.jpg", "FilePath": "images/huayra-1.jpg", "Description": "Gallery"},
+    {"FileName": "huayra-2.jpg", "FilePath": "images/huayra-2.jpg", "Description": "Gallery"},
+    {"FileName": "huayra-3.jpg", "FilePath": "images/huayra-3.jpg", "Description": "Gallery"},
+
+    {"FileName": "huayrabc-1.jpg", "FilePath": "images/huayrabc-1.jpg", "Description": "Gallery"},
+    {"FileName": "huayrabc-2.jpg", "FilePath": "images/huayrabc-2.jpg", "Description": "Gallery"},
+    {"FileName": "huayrabc-3.jpg", "FilePath": "images/huayrabc-3.jpg", "Description": "Gallery"},
+
+    {"FileName": "zondar-1.jpg", "FilePath": "images/zondar-1.jpg", "Description": "Gallery"},
+    {"FileName": "zondar-2.jpg", "FilePath": "images/zondar-2.jpg", "Description": "Gallery"},
+    {"FileName": "zondar-3.jpg", "FilePath": "images/zondar-3.jpg", "Description": "Gallery"}
+
     
 ]
 
@@ -341,7 +413,6 @@ cars = [
     {"model": "GLC", "year": 2024, "baseMSRP": 47450, "manufacturerID": 6},
     {"model": "GLE", "year": 2024, "baseMSRP": 62900, "manufacturerID": 6},
 
-    #Aidens images
     {"model": "A4", "year": 2024, "baseMSRP": 41900, "manufacturerID": 7},
     {"model": "A6", "year": 2024, "baseMSRP": 57900, "manufacturerID": 7},
     {"model": "Q5", "year": 2024, "baseMSRP": 45500, "manufacturerID": 7},
@@ -371,7 +442,6 @@ cars = [
     {"model": "765LT", "year": 2024, "baseMSRP": 382500, "manufacturerID": 11},
     {"model": "GT", "year": 2024, "baseMSRP": 210000, "manufacturerID": 11},
     {"model": "Senna", "year": 2024, "baseMSRP": 1000000, "manufacturerID": 11},
-    #End Aiden Images
     
     {"model": "Huayra", "year": 2024, "baseMSRP": 3500000, "manufacturerID": 12},
     {"model": "Zonda R", "year": 2024, "baseMSRP": 1800000, "manufacturerID": 12},
@@ -400,147 +470,316 @@ cars = [
 ]
 # images for cars, not the actual car images rn.. to be changed
 car_images = [
-    {"carID": 1, "imageID": 1, "role":"logo"},
-    {"carID": 2, "imageID": 1, "role":"logo"},
-    {"carID": 3, "imageID": 1, "role":"logo"},
+    # F150
+    {"carID": 1, "imageID": 16, "role": "gallery"},
+    {"carID": 1, "imageID": 17, "role": "gallery"},
+    {"carID": 1, "imageID": 18, "role": "gallery"},
+
+    # Mustang
+    {"carID": 2, "imageID": 19, "role": "gallery"},
+    {"carID": 2, "imageID": 20, "role": "gallery"},
+    {"carID": 2, "imageID": 21, "role": "gallery"},
+
+    # Explorer
+    {"carID": 3, "imageID": 22, "role": "gallery"},
+    {"carID": 3, "imageID": 23, "role": "gallery"},
+    {"carID": 3, "imageID": 24, "role": "gallery"},
+
+    # Camry
+    {"carID": 4, "imageID": 25, "role": "gallery"},
+    {"carID": 4, "imageID": 26, "role": "gallery"},
+    {"carID": 4, "imageID": 27, "role": "gallery"},
+
+    # Corolla
+    {"carID": 5, "imageID": 28, "role": "gallery"},
+    {"carID": 5, "imageID": 29, "role": "gallery"},
+
+    # RAV4
+    {"carID": 6, "imageID": 30, "role": "gallery"},
+    {"carID": 6, "imageID": 31, "role": "gallery"},
+    {"carID": 6, "imageID": 32, "role": "gallery"},
+
+    # civic
+    {"carID": 7, "imageID": 33, "role": "gallery"},
+    {"carID": 7, "imageID": 34, "role": "gallery"},
+    {"carID": 7, "imageID": 35, "role": "gallery"},
+
+    # Accord
+    {"carID": 8, "imageID": 36, "role": "gallery"},
+    {"carID": 8, "imageID": 37, "role": "gallery"},
+    {"carID": 8, "imageID": 38, "role": "gallery"},
+
+    # CR-V 
+    {"carID": 9, "imageID": 39, "role": "gallery"},
+    {"carID": 9, "imageID": 40, "role": "gallery"},
+    {"carID": 9, "imageID": 41, "role": "gallery"},
+
+    # 3-series
+    {"carID": 10, "imageID": 42, "role": "gallery"},
+    {"carID": 10, "imageID": 43, "role": "gallery"},
+    {"carID": 10, "imageID": 44, "role": "gallery"},
+
+    # X5
+    {"carID": 11, "imageID": 45, "role": "gallery"},
+    {"carID": 11, "imageID": 46, "role": "gallery"},
+
+    #I4
+    {"carID": 12, "imageID": 47, "role": "gallery"},
+    {"carID": 12, "imageID": 48, "role": "gallery"},
+    {"carID": 12, "imageID": 49, "role": "gallery"},
+
+    #Model_S
+    {"carID": 13, "imageID": 50, "role": "gallery"},
+    {"carID": 13, "imageID": 51, "role": "gallery"},
+    {"carID": 13, "imageID": 52, "role": "gallery"},
+
+    #Model_3
+    {"carID": 14, "imageID": 53, "role": "gallery"},
+    {"carID": 14, "imageID": 54, "role": "gallery"},
+    {"carID": 14, "imageID": 55, "role": "gallery"},
+
+    #Model_Y
+    {"carID": 15, "imageID": 56, "role": "gallery"},
+    {"carID": 15, "imageID": 57, "role": "gallery"},
+    {"carID": 15, "imageID": 58, "role": "gallery"},
+
+    #C-Class
+    {"carID": 16, "imageID": 59, "role": "gallery"},
+    {"carID": 16, "imageID": 60, "role": "gallery"},
+
+    # E-Class
+    {"carID": 17, "imageID": 61, "role": "gallery"},
+    {"carID": 17, "imageID": 62, "role": "gallery"},
+    {"carID": 17, "imageID": 63, "role": "gallery"},
+
+    # S-Class
+    {"carID": 18, "imageID": 64, "role": "gallery"},
+    {"carID": 18, "imageID": 65, "role": "gallery"},
+    {"carID": 18, "imageID": 66, "role": "gallery"},
+
+    #GLC 
+    {"carID": 19, "imageID": 67, "role": "gallery"},
+    {"carID": 19, "imageID": 68, "role": "gallery"},
+    {"carID": 19, "imageID": 69, "role": "gallery"},
+
+    #GLE
+    {"carID": 20, "imageID": 70, "role": "gallery"},
+    {"carID": 20, "imageID": 71, "role": "gallery"},
+    {"carID": 20, "imageID": 72, "role": "gallery"},
+
+    #A4
+    {"carID": 21, "imageID": 73, "role": "gallery"},
+    {"carID": 21, "imageID": 74, "role": "gallery"},
+    {"carID": 21, "imageID": 75, "role": "gallery"},
+
+    #A6
+    {"carID": 22, "imageID": 76, "role": "gallery"},
+    {"carID": 22, "imageID": 77, "role": "gallery"},
+    {"carID": 22, "imageID": 78, "role": "gallery"},
+
+    #Q5
+    {"carID": 23, "imageID": 79, "role": "gallery"},
+    {"carID": 23, "imageID": 80, "role": "gallery"},
+    {"carID": 23, "imageID": 81, "role": "gallery"},
+
+    #Q7
+    {"carID": 24, "imageID": 82, "role": "gallery"},
+    {"carID": 24, "imageID": 83, "role": "gallery"},
+    {"carID": 24, "imageID": 84, "role": "gallery"},
+
+    #R8
+    {"carID": 25, "imageID": 85, "role": "gallery"},
+    {"carID": 25, "imageID": 86, "role": "gallery"},
+    {"carID": 25, "imageID": 87, "role": "gallery"},
+
+    #488GTB
+    {"carID": 26, "imageID": 88, "role": "gallery"},
+    {"carID": 26, "imageID": 89, "role": "gallery"},
+    {"carID": 26, "imageID": 90, "role": "gallery"},
+
+    #F8
+    {"carID": 27, "imageID": 91, "role": "gallery"},
+    {"carID": 27, "imageID": 92, "role": "gallery"},
+    {"carID": 27, "imageID": 93, "role": "gallery"},
+
+    #Roma
+    {"carID": 28, "imageID": 94, "role": "gallery"},
+    {"carID": 28, "imageID": 95, "role": "gallery"},
+    {"carID": 28, "imageID": 96, "role": "gallery"},
+
+    #SF90
+    {"carID": 29, "imageID": 97, "role": "gallery"},
+    {"carID": 29, "imageID": 98, "role": "gallery"},
+    {"carID": 29, "imageID": 99, "role": "gallery"},
+
+    #B12
+    {"carID": 30, "imageID": 100, "role": "gallery"},
+    {"carID": 30, "imageID": 101, "role": "gallery"},
+    {"carID": 30, "imageID": 102, "role": "gallery"},
+
+    # Huracan
+    {"carID": 31, "imageID": 103, "role": "gallery"},
+    {"carID": 31, "imageID": 104, "role": "gallery"},
+    {"carID": 31, "imageID": 105, "role": "gallery"},
+
+    # Aventador
+    {"carID": 32, "imageID": 106, "role": "gallery"},
+    {"carID": 32, "imageID": 107, "role": "gallery"},
+    {"carID": 32, "imageID": 108, "role": "gallery"},
+
+    # Urus
+    {"carID": 33, "imageID": 109, "role": "gallery"},
+    {"carID": 33, "imageID": 110, "role": "gallery"},
+       
+    #Revuelto
+    {"carID": 34, "imageID": 111, "role": "gallery"},
+    {"carID": 34, "imageID": 112, "role": "gallery"},
+    {"carID": 34, "imageID": 113, "role": "gallery"},
+
+    #sian
+    {"carID": 35, "imageID": 114, "role": "gallery"},
+
+    #golf
+    {"carID": 36, "imageID": 115, "role": "gallery"},
+    {"carID": 36, "imageID": 116, "role": "gallery"},
+    {"carID": 36, "imageID": 117, "role": "gallery"},
+
+    #Passat
+    {"carID": 37, "imageID": 118, "role": "gallery"},
+    {"carID": 37, "imageID": 119, "role": "gallery"},
+    {"carID": 37, "imageID": 120, "role": "gallery"},
+
+    #Tiguan
+    {"carID": 38, "imageID": 121, "role": "gallery"},
+    {"carID": 38, "imageID": 122, "role": "gallery"},
+    {"carID": 38, "imageID": 123, "role": "gallery"},
+
+    #Atlas
+    {"carID": 39, "imageID": 124, "role": "gallery"},
+    {"carID": 39, "imageID": 125, "role": "gallery"},
+    {"carID": 39, "imageID": 126, "role": "gallery"},
+
+    #ID4
+    {"carID": 40, "imageID": 127, "role": "gallery"},
+    {"carID": 40, "imageID": 128, "role": "gallery"},
+    {"carID": 40, "imageID": 129, "role": "gallery"},
+
+    #720S
+    {"carID": 41, "imageID": 130, "role": "gallery"},
+    {"carID": 41, "imageID": 131, "role": "gallery"},
+    {"carID": 41, "imageID": 132, "role": "gallery"},
+
+    #Artura
+    {"carID": 42, "imageID": 133, "role": "gallery"},
+    {"carID": 42, "imageID": 134, "role": "gallery"},
+    {"carID": 42, "imageID": 135, "role": "gallery"},
+
+    #765
+    {"carID": 43, "imageID": 136, "role": "gallery"},
+    {"carID": 43, "imageID": 137, "role": "gallery"},
+    {"carID": 43, "imageID": 138, "role": "gallery"},
+
+    #GT
+    {"carID": 44, "imageID": 139, "role": "gallery"},
+    {"carID": 44, "imageID": 140, "role": "gallery"},
+    {"carID": 44, "imageID": 141, "role": "gallery"},
+
+    #Senna
+    {"carID": 45, "imageID": 142, "role": "gallery"},
+    {"carID": 45, "imageID": 143, "role": "gallery"},
+    {"carID": 45, "imageID": 144, "role": "gallery"},
+
+    #Huayra
+    {"carID": 46, "imageID": 188, "role": "gallery"},
+    {"carID": 46, "imageID": 189, "role": "gallery"},
+    {"carID": 46, "imageID": 190, "role": "gallery"},
+
+    # Zonda R
+    {"carID": 47, "imageID": 194, "role": "gallery"},
+    {"carID": 47, "imageID": 195, "role": "gallery"},
+    {"carID": 47, "imageID": 196, "role": "gallery"},
+
+    #HuayraBC
+    {"carID": 48, "imageID": 191, "role": "gallery"},
+    {"carID": 48, "imageID": 192, "role": "gallery"},
+    {"carID": 48, "imageID": 193, "role": "gallery"},
+
+    #Utopia
+    {"carID": 49, "imageID": 185, "role": "gallery"},
+    {"carID": 49, "imageID": 186, "role": "gallery"},
+    {"carID": 49, "imageID": 187, "role": "gallery"},
+
+    #Zonda Cinque
+    {"carID": 50, "imageID": 182, "role": "gallery"},
+    {"carID": 50, "imageID": 183, "role": "gallery"},
+    {"carID": 50, "imageID": 184, "role": "gallery"},
+
+    # Jesko
+    {"carID": 51, "imageID": 179, "role": "gallery"},
+    {"carID": 51, "imageID": 180, "role": "gallery"},
+    {"carID": 51, "imageID": 181, "role": "gallery"},
+
+    #Regera
+    {"carID": 52, "imageID": 176, "role": "gallery"},
+    {"carID": 52, "imageID": 177, "role": "gallery"},
+    {"carID": 52, "imageID": 178, "role": "gallery"},
+
+    #AgeraRS
+    {"carID": 53, "imageID": 173, "role": "gallery"},
+    {"carID": 53, "imageID": 174, "role": "gallery"},
+    {"carID": 53, "imageID": 175, "role": "gallery"},
+
+    #Gemera
+    {"carID": 54, "imageID": 170, "role": "gallery"},
+    {"carID": 54, "imageID": 171, "role": "gallery"},
+    {"carID": 54, "imageID": 172, "role": "gallery"},
+
+    #One:1
+    {"carID": 55, "imageID": 167, "role": "gallery"},
+    {"carID": 55, "imageID": 168, "role": "gallery"},
+    {"carID": 55, "imageID": 169, "role": "gallery"},
+
+    #Clio
+    {"carID": 56, "imageID": 164, "role": "gallery"},
+    {"carID": 56, "imageID": 165, "role": "gallery"},
+    {"carID": 56, "imageID": 166, "role": "gallery"},
+
+    #Megane
+    {"carID": 57, "imageID": 163, "role": "gallery"},
     
-    {"carID": 4, "imageID": 2, "role":"logo"},
-    {"carID": 5, "imageID": 2, "role":"logo"},
-    {"carID": 6, "imageID": 2, "role":"logo"},
+    #Captur
+    {"carID": 58, "imageID": 162, "role": "gallery"},
+    
+    #Arkana
+    {"carID": 59, "imageID": 161, "role": "gallery"},
 
-    {"carID": 7, "imageID": 3, "role":"logo"},
-    {"carID": 8, "imageID": 3, "role":"logo"},
-    {"carID": 9, "imageID": 3, "role":"logo"},
+    #Austral
+    {"carID": 60, "imageID": 160, "role": "gallery"},
+    
+    #Chiron
+    {"carID": 61, "imageID": 157, "role": "gallery"},
+    {"carID": 61, "imageID": 158, "role": "gallery"},
+    {"carID": 61, "imageID": 159, "role": "gallery"},
 
-    {"carID": 10, "imageID": 4, "role":"logo"},
-    {"carID": 11, "imageID": 4, "role":"logo"},
-    {"carID": 12, "imageID": 4, "role":"logo"},
+    #Divo
+    {"carID": 62, "imageID": 154, "role": "gallery"},
+    {"carID": 62, "imageID": 155, "role": "gallery"},
+    {"carID": 62, "imageID": 156, "role": "gallery"},
 
-    {"carID": 13, "imageID": 5, "role":"logo"},
-    {"carID": 14, "imageID": 5, "role":"logo"},
-    {"carID": 15, "imageID": 5, "role":"logo"},
-    {"carID": 16, "imageID": 6, "role":"logo"},
+    #Centodieci
+    {"carID": 63, "imageID": 151, "role": "gallery"},
+    {"carID": 63, "imageID": 152, "role": "gallery"},
+    {"carID": 63, "imageID": 153, "role": "gallery"},
 
-    {"carID": 21, "imageID": 6, "role": "gallery"},
-    {"carID": 21, "imageID": 7, "role": "gallery"},
-    {"carID": 21, "imageID": 8, "role": "gallery"},
+    #Veyron
+    {"carID": 64, "imageID": 148, "role": "gallery"},
+    {"carID": 64, "imageID": 149, "role": "gallery"},
+    {"carID": 64, "imageID": 150, "role": "gallery"},
 
-    # A6 (carID 22) → images 9, 10, 11
-    {"carID": 22, "imageID": 9, "role": "gallery"},
-    {"carID": 22, "imageID": 10, "role": "gallery"},
-    {"carID": 22, "imageID": 11, "role": "gallery"},
-
-    # Q5 (carID 23) → images 12, 13, 14
-    {"carID": 23, "imageID": 12, "role": "gallery"},
-    {"carID": 23, "imageID": 13, "role": "gallery"},
-    {"carID": 23, "imageID": 14, "role": "gallery"},
-
-    # Q7 (carID 24) → images 15, 16, 17
-    {"carID": 24, "imageID": 15, "role": "gallery"},
-    {"carID": 24, "imageID": 16, "role": "gallery"},
-    {"carID": 24, "imageID": 17, "role": "gallery"},
-
-    # R8 (carID 25) → images 18, 19, 20
-    {"carID": 25, "imageID": 18, "role": "gallery"},
-    {"carID": 25, "imageID": 19, "role": "gallery"},
-    {"carID": 25, "imageID": 20, "role": "gallery"},
-
-    # 488 GTB (carID 26) → images 21, 22, 23
-    {"carID": 26, "imageID": 21, "role": "gallery"},
-    {"carID": 26, "imageID": 22, "role": "gallery"},
-    {"carID": 26, "imageID": 23, "role": "gallery"},
-
-    # F8 Tributo (carID 27) → images 24, 25, 26
-    {"carID": 27, "imageID": 24, "role": "gallery"},
-    {"carID": 27, "imageID": 25, "role": "gallery"},
-    {"carID": 27, "imageID": 26, "role": "gallery"},
-
-    # Roma (carID 28) → images 27, 28, 29
-    {"carID": 28, "imageID": 27, "role": "gallery"},
-    {"carID": 28, "imageID": 28, "role": "gallery"},
-    {"carID": 28, "imageID": 29, "role": "gallery"},
-
-    # SF90 Stradale (carID 29) → images 30, 31, 32
-    {"carID": 29, "imageID": 30, "role": "gallery"},
-    {"carID": 29, "imageID": 31, "role": "gallery"},
-    {"carID": 29, "imageID": 32, "role": "gallery"},
-
-    # 812 Superfast (carID 30) → images 33, 34, 35
-    {"carID": 30, "imageID": 33, "role": "gallery"},
-    {"carID": 30, "imageID": 34, "role": "gallery"},
-    {"carID": 30, "imageID": 35, "role": "gallery"},
-
-    # Huracán (carID 31) → images 36, 37, 38
-    {"carID": 31, "imageID": 36, "role": "gallery"},
-    {"carID": 31, "imageID": 37, "role": "gallery"},
-    {"carID": 31, "imageID": 38, "role": "gallery"},
-
-    # Aventador (carID 32) → images 39, 40, 41
-    {"carID": 32, "imageID": 39, "role": "gallery"},
-    {"carID": 32, "imageID": 40, "role": "gallery"},
-    {"carID": 32, "imageID": 41, "role": "gallery"},
-
-    # Urus (carID 33) → images 42, 43
-    {"carID": 33, "imageID": 42, "role": "gallery"},
-    {"carID": 33, "imageID": 43, "role": "gallery"},
-
-    # Revuelto (carID 34) → images 44, 45, 46
-    {"carID": 34, "imageID": 44, "role": "gallery"},
-    {"carID": 34, "imageID": 45, "role": "gallery"},
-    {"carID": 34, "imageID": 46, "role": "gallery"},
-
-    # Sian (carID 35) → image 47
-    {"carID": 35, "imageID": 47, "role": "gallery"},
-
-    # Golf (carID 36) → images 48, 49, 50
-    {"carID": 36, "imageID": 48, "role": "gallery"},
-    {"carID": 36, "imageID": 49, "role": "gallery"},
-    {"carID": 36, "imageID": 50, "role": "gallery"},
-
-    # Passat (carID 37) → images 51, 52, 53
-    {"carID": 37, "imageID": 51, "role": "gallery"},
-    {"carID": 37, "imageID": 52, "role": "gallery"},
-    {"carID": 37, "imageID": 53, "role": "gallery"},
-
-    # Tiguan (carID 38) → images 54, 55, 56
-    {"carID": 38, "imageID": 54, "role": "gallery"},
-    {"carID": 38, "imageID": 55, "role": "gallery"},
-    {"carID": 38, "imageID": 56, "role": "gallery"},
-
-    # Atlas (carID 39) → images 57, 58, 59
-    {"carID": 39, "imageID": 57, "role": "gallery"},
-    {"carID": 39, "imageID": 58, "role": "gallery"},
-    {"carID": 39, "imageID": 59, "role": "gallery"},
-
-    # ID.4 (carID 40) → images 60, 61, 62
-    {"carID": 40, "imageID": 60, "role": "gallery"},
-    {"carID": 40, "imageID": 61, "role": "gallery"},
-    {"carID": 40, "imageID": 62, "role": "gallery"},
-
-    # 720S (carID 41) → images 63, 64, 65
-    {"carID": 41, "imageID": 63, "role": "gallery"},
-    {"carID": 41, "imageID": 64, "role": "gallery"},
-    {"carID": 41, "imageID": 65, "role": "gallery"},
-
-    # Artura (carID 42) → images 66, 67, 68
-    {"carID": 42, "imageID": 66, "role": "gallery"},
-    {"carID": 42, "imageID": 67, "role": "gallery"},
-    {"carID": 42, "imageID": 68, "role": "gallery"},
-
-    # 765LT (carID 43) → images 69, 70, 71
-    {"carID": 43, "imageID": 69, "role": "gallery"},
-    {"carID": 43, "imageID": 70, "role": "gallery"},
-    {"carID": 43, "imageID": 71, "role": "gallery"},
-
-    # GT (carID 44) → images 72, 73, 74
-    {"carID": 44, "imageID": 72, "role": "gallery"},
-    {"carID": 44, "imageID": 73, "role": "gallery"},
-    {"carID": 44, "imageID": 74, "role": "gallery"},
-
-    # Senna (carID 45) → images 75, 76, 77
-    {"carID": 45, "imageID": 75, "role": "gallery"},
-    {"carID": 45, "imageID": 76, "role": "gallery"},
-    {"carID": 45, "imageID": 77, "role": "gallery"},
+    #Bolide
+    {"carID": 65, "imageID": 145, "role": "gallery"},
+    {"carID": 65, "imageID": 146, "role": "gallery"},
+    {"carID": 65, "imageID": 147, "role": "gallery"},
 
 ]
 __all__ = ["images", "manufacturers", "cars"]

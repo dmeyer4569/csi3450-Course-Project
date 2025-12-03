@@ -9,7 +9,7 @@ def get_engine(testing: bool = False):
     if testing:
         engine = create_async_engine("sqlite+aiosqlite:///testing.sqlite", echo=True)
     # will add prod/ final db later.. probably mariaDB :p
-    # If i don't get too lazy lmao... he don't seem to care as long as it is a RDBMS :D 
+    # If i don't get too lazy lmao... 
     
     return engine
 

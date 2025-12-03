@@ -40,6 +40,16 @@ async def get_cars(db: AsyncSession = Depends(get_db)):
                 # Extract relative path from 'images' onwards
                 image_path = file_path[file_path.find('images'):] if 'images' in file_path else file_path
 
+        logo_path = None
+        logo_file_path = car_data.get("logoFilePath")
+        if logo_file_path:
+            abs_logo_path = os.path.join(os.getcwd(), logo_file_path)
+            if os.path.exists(abs_logo_path):
+                logo_path = logo_file_path[logo_file_path.find('images'):] if 'images' in logo_file_path else logo_file_path
+  
+        car_data["manufacturer_logo_path"] = logo_path
+        car_data.pop("logoFilePath", None)
+        car_data.pop("logoFileName", None)
         car_data["car_image_path"] = image_path
         car_data.pop("FilePath", None)
         car_data.pop("imageID", None)
