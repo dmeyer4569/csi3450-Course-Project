@@ -54,7 +54,10 @@ get_cars = text(
         i.FileName,
         i.FilePath,
         ci.role,
-        m.manufacturerName
+        m.manufacturerName,
+        m.logoID,
+        mi.FileName AS logoFileName,
+        mi.FilePath AS logoFilePath
     FROM cars c
     LEFT JOIN car_images ci ON ci.carImageID = (
         SELECT ci2.carImageID
@@ -65,6 +68,7 @@ get_cars = text(
     )
     LEFT JOIN manufacturers m on m.manufacturerID = c.manufacturerID
     LEFT JOIN images i ON i.imageID = ci.imageID
+    LEFT JOIN images mi ON mi.imageID = m.logoID
     LIMIT 200 OFFSET 0;
     """
 )
