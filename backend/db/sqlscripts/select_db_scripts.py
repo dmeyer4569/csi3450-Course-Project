@@ -39,9 +39,10 @@ get_manufact_cars = text(
 # get all manufacturers
 get_manufacturers = text(
     """
-    SELECT * 
-    FROM manufacturers
-    LIMIT :limit OFFSET :offset;
+    SELECT m.manufacturerID, m.manufacturerName, m.established, m.headquarters, 
+        m.description, m.logoID, i.imageID, i.FileName, i.FilePath
+    FROM manufacturers m
+    LEFT JOIN images i ON i.imageID = m.logoID;
     """
 )
 
