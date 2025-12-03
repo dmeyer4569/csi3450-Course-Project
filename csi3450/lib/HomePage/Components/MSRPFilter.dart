@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'getCarBloC/get_car_card_bloc.dart';
@@ -72,9 +71,8 @@ class _MSRPFilterWidgetState extends State<MSRPFilterWidget> {
                   .key;
 
               widget.carBloc.add(
-                LoadCarsEvent(manufacturerId: newValue, manufacturerName: selectedName),
+                LoadOrderEvent(order: newValue),
               );
-
             },
           ),
         ),
