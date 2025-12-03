@@ -273,63 +273,63 @@ images = [
 
 manufacturers = [
     {
-        "manufacturerName": "Ford Motor Company",
+        "manufacturerName": "Ford",
         "established": "1903-06-16",
         "headquarters": "Dearborn, Michigan, USA",
         "description": "American multinational automaker producing cars, trucks, and SUVs.",
         "logoID": 1,
     },
     {
-        "manufacturerName": "Toyota Motor Corporation",
+        "manufacturerName": "Toyota",
         "established": "1937-08-28",
         "headquarters": "Toyota City, Japan",
         "description": "Japanese automaker known for reliability and hybrid technology.",
         "logoID": 2,
     },
     {
-        "manufacturerName": "Honda Motor Co., Ltd.",
+        "manufacturerName": "Honda",
         "established": "1948-09-24",
         "headquarters": "Minato, Tokyo, Japan",
         "description": "Japanese manufacturer of cars, motorcycles, and power equipment.",
         "logoID": 3,
     },
     {
-        "manufacturerName": "Bayerische Motoren Werke AG (BMW)",
+        "manufacturerName": "BMW",
         "established": "1916-03-07",
         "headquarters": "Munich, Germany",
         "description": "German luxury vehicle and motorcycle manufacturer.",
         "logoID": 4,
     },
     {
-        "manufacturerName": "Tesla, Inc.",
+        "manufacturerName": "Tesla",
         "established": "2003-07-01",
         "headquarters": "Palo Alto, California, USA",
         "description": "Electric vehicle and clean energy company.",
         "logoID": 5,
     },
     {
-        "manufacturerName": "Mercedes-Benz",
+        "manufacturerName": "Mercedes",
         "established": "1926-06-28",
         "headquarters": "Stuttgart, Germany",
         "description": "Luxury vehicles and automotive engineering company.",
         "logoID": 6
     },
     {
-        "manufacturerName": "Audi AG",
+        "manufacturerName": "Audi",
         "established": "1909-07-16",
         "headquarters": "Ingolstadt, Germany",
         "description": "Premium automobile manufacturer known for advanced technology.",
         "logoID": 7
     },
     {
-        "manufacturerName": "Ferrari S.p.A.",
+        "manufacturerName": "Ferrari",
         "established": "1939-09-13",
         "headquarters": "Maranello, Italy",
         "description": "High-performance sports car manufacturer.",
         "logoID": 8
     },
     {
-        "manufacturerName": "Automobili Lamborghini S.p.A.",
+        "manufacturerName": "Lamborghini",
         "established": "1963-10-30",
         "headquarters": "Sant'Agata Bolognese, Italy",
         "description": "Italian manufacturer of luxury supercars.",
@@ -337,7 +337,7 @@ manufacturers = [
     },
     {
 
-        "manufacturerName": "Volkswagen AG",
+        "manufacturerName": "Volkswagen",
         "established": "1937-05-28",
         "headquarters": "Wolfsburg, Germany",
         "description": "Global automobile manufacturer producing a wide range of vehicles.",
@@ -345,7 +345,7 @@ manufacturers = [
     },
     {
 
-        "manufacturerName": "McLaren Automotive",
+        "manufacturerName": "McLaren",
         "established": "1985-09-02",
         "headquarters": "Woking, Surrey, United Kingdom",
         "description": "British manufacturer of high-performance supercars.",
@@ -353,7 +353,7 @@ manufacturers = [
     },
     {
 
-        "manufacturerName": "Pagani Automobili S.p.A.",
+        "manufacturerName": "Pagani",
         "established": "1992-01-01",
         "headquarters": "San Cesario sul Panaro, Italy",
         "description": "Italian manufacturer of exclusive hypercars.",
@@ -361,7 +361,7 @@ manufacturers = [
     },
     {
 
-        "manufacturerName": "Koenigsegg Automotive AB",
+        "manufacturerName": "Koenigsegg",
         "established": "1994-08-12",
         "headquarters": "Ängelholm, Sweden",
         "description": "Swedish manufacturer of high-performance hypercars.",
@@ -369,7 +369,7 @@ manufacturers = [
     },
     {
 
-        "manufacturerName": "Renault Group",
+        "manufacturerName": "Renault",
         "established": "1899-02-25",
         "headquarters": "Boulogne-Billancourt, France",
         "description": "French multinational automobile manufacturer.",
@@ -377,7 +377,7 @@ manufacturers = [
     },
     {
 
-        "manufacturerName": "Bugatti Automobiles S.A.S.",
+        "manufacturerName": "Bugatti",
         "established": "1909-01-01",
         "headquarters": "Molsheim, France",
         "description": "Luxury hypercar manufacturer known for extreme performance.",

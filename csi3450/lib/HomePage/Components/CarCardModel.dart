@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui';
 import 'package:csi3450/HomePage/Components/getCarBloC/get_car_card_bloc.dart';
@@ -9,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'CarCardModel.dart';
+import 'EditCarDialogModel.dart';
 export 'CarCardModel.dart';
 
 class CarCardWidget extends StatefulWidget {
@@ -34,13 +36,16 @@ class CarCardWidget extends StatefulWidget {
 }
 
 class _CarCardWidgetState extends State<CarCardWidget> {
-  late Uint8List _imageBytes;
+  // late Uint8List _imageBytes;
+  late File imageFile;
 
   void initState() {
     super.initState();
-    _imageBytes = base64Decode(widget.carImageBase64);
+    // _imageBytes = base64Decode(widget.carImageBase64);
+    imageFile = File(
+      "C:/Users/naksh/OneDrive/Desktop/csi3450-Course-Project/backend/${widget.carImageBase64}",
+    );
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -103,9 +108,7 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                                     child: Image.network(
                                       'https://picsum.photos/seed/4/600',
                                       width: 200,
-                                      height: MediaQuery.sizeOf(
-                                        context,
-                                      ).height,
+                                      height: MediaQuery.sizeOf(context).height,
                                       fit: BoxFit.fill,
                                       alignment: Alignment(0, -1),
                                     ),
@@ -178,6 +181,57 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                                 ),
                               ],
                             ),
+                            // --- NEW CODE STARTS HERE ---
+                            Align(
+                              alignment: AlignmentDirectional(1, 1),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.black.withOpacity(0.4),
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      IconButton(
+                                        visualDensity: VisualDensity.compact,
+                                        icon: const Icon(
+                                          Icons.edit,
+                                          color: Colors.white,
+                                          size: 20,
+                                        ),
+                                        onPressed: () {
+                                          // Add your Edit logic here
+                                          EditCarDialog.show(
+                                            context,
+                                            carId: widget.carId,
+                                            currentModel: widget.model,
+                                            currentYear: widget.year,
+                                            currentBaseMsrp: widget.baseMsrp,
+                                            currentManufacturerName: widget.manufacturerName,
+                                          );
+                                        },
+                                      ),
+                                      IconButton(
+                                        visualDensity: VisualDensity.compact,
+                                        icon: const Icon(
+                                          Icons.delete,
+                                          color: Colors.redAccent,
+                                          size: 20,
+                                        ),
+                                        onPressed: () {
+                                          context.read<GetCarCardBloc>().add(
+                                            LoadDeleteCar(carId: widget.carId),
+                                          );
+                                        },
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            // --- NEW CODE ENDS HERE ---
                           ],
                         ),
                       ),
@@ -211,8 +265,9 @@ class _CarCardWidgetState extends State<CarCardWidget> {
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                   ),
-                                  child: Image.memory(
-                                    _imageBytes,
+                                  child: Image.file(
+                                    //here, it would be better to pass a file instead, but yknow what, it is what it is.
+                                    imageFile,
                                     fit: BoxFit.contain,
                                   ),
                                 ),

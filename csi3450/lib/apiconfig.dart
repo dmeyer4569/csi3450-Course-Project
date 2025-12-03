@@ -15,6 +15,8 @@ class AppConfig {
 
   static final Endpoint editManufacturer = Endpoint(ip: ip, link: "api/edit_manufacturer");
   static final Endpoint editCar = Endpoint(ip: ip, link: "api/edit_car");
+
+  static final Endpoint deleteCar = Endpoint(ip: ip, link: "api/delete_car/");
 }
 
 ///Holds an API endpoint with IP and link path.
