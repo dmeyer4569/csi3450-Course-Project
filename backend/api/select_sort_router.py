@@ -4,6 +4,7 @@ from fastapi.responses import JSONResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from database.session import get_db
 from db.sqlscripts import crazysqlscripter as crazy_sql
+from db.sqlscripts import select_db_scripts as seldb
 
 select_sort_router = APIRouter()
 
@@ -15,9 +16,12 @@ async def get_manufacturers(manufacturer_id: int, order: int = 0, db: AsyncSessi
     query_script = crazy_sql.custom_car_from_manu_script(order)
 
     raw_result = await db.execute(query_script, {"manufacturerID": manufacturer_id})
-    cars = raw_result.mappings().all()
 
+    cars = raw_result.mappings().all()
+    raw_result_manu = await db.execute(seldb.get_manufacturers, {"manufacturerID": manufacturer_id})
+    manufacturer = raw_result_manu.mappings().first()
     return_data = []
+    return_data.append(dict(manufacturer))
 
     for car in cars:
         car_data = dict(car) # make the mapping a dict 
