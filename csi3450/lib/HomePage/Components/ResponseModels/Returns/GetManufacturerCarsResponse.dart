@@ -42,8 +42,9 @@ class GetManufacturersCarResponse {
         ? DateTime.now()
         : (DateTime.tryParse(json["addedAt"]) ?? DateTime.now()),
 
-    carImageBase64: json["car_image_base64"] ?? "images/null.png",
-    carImagePath: json["car_image_path"] ?? "images/null.png"
+    carImagePath: json["FilePath"] ?? "images/null.png",
+    carImageBase64: json["manufacturer_logo_path"] ?? "images/null.png",
+
   );
 
   Map<String, dynamic> toJson() => {

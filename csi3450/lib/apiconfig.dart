@@ -29,5 +29,4 @@ class Endpoint {
     required this.ip,
     required this.link,
   });
-
 }
