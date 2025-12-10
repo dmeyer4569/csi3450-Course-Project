@@ -15,8 +15,20 @@ async def get_manufacturers(db: AsyncSession = Depends(get_db)):
     # Pass the limit and offset values (you can adjust 100 to whatever number you need)
     raw_result = await db.execute(sel_db.get_manufacturers, {"limit": 100, "offset": 0})
     manufacturers = raw_result.mappings().all()
+    
+    return_data = []
 
-    return manufacturers
+    for manu in manufacturers:
+        manu_data = dict(manu)
+
+        logo_path = manu_data["FilePath"]
+
+        manu_data["manufacturer_logo_path"] = logo_path
+        manu_data.pop("FilePath", None)
+
+        return_data.append(manu_data)
+
+    return return_data
 
 # works similar to manufacturers, but for cars + return first image
 @select_router.get("/get_cars", tags=["Select"])
@@ -76,7 +88,11 @@ async def get_manufacturer_cars(manufacturer_id: int, db: AsyncSession = Depends
 
     if not cars:
         raise HTTPException(status_code=404, detail="No cars found for this manufacturer :(")
-
+    raw_result_manu = await db.execute(sel_db.get_manufacturers, {"manufacturerID": manufacturer_id})
+    manufacturer = raw_result_manu.mappings().first()
+    return_data = []
+    manufacturer_dict = dict(manufacturer)
+    logo_path = manufacturer_dict["FilePath"]
     for car in cars:
         car_data = dict(car) # make the mapping a dict 
         image_path = None
@@ -84,7 +100,7 @@ async def get_manufacturer_cars(manufacturer_id: int, db: AsyncSession = Depends
         # verify image actually exists and extract relative path
         file_path = car_data.get("FilePath")
         print(file_path)
-
+        car_data["manufacturer_logo_path"] = logo_path
         car_data.pop("imageID", None)
         car_data.pop("manufacturerID", None)
         car_data.pop("FileName", None)

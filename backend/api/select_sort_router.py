@@ -21,8 +21,8 @@ async def get_manufacturers(manufacturer_id: int, order: int = 0, db: AsyncSessi
     raw_result_manu = await db.execute(seldb.get_manufacturers, {"manufacturerID": manufacturer_id})
     manufacturer = raw_result_manu.mappings().first()
     return_data = []
-    return_data.append(dict(manufacturer))
-
+    manufacturer_dict = dict(manufacturer)
+    logo_path = manufacturer_dict["FilePath"]
     for car in cars:
         car_data = dict(car) # make the mapping a dict 
         image_path = None
@@ -36,7 +36,7 @@ async def get_manufacturers(manufacturer_id: int, order: int = 0, db: AsyncSessi
         car_data.pop("manufacturerID", None)
         car_data.pop("FileName", None)
 
-
+        car_data["manufacturer_logo_path"] = logo_path
         return_data.append(car_data)
 
     return JSONResponse(content=return_data)
